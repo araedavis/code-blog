@@ -2,27 +2,27 @@ var projects = [];
 
 //create a constructor function for project objects
 
-function Project(prop){
-  this.title = prop.title;
-  this.subtitle = prop.subtitle;
-  this.summary = prop.summary;
-  this.img = prop.img;
-  this.projectUrl = prop.projectUrl;
-  this.dateCreated = prop.dateCreated;
+function Project(opts){
+  this.title = opts.title;
 }
 
-//create a method to render the projects on the page
 Project.prototype.toHtml = function(){
-  //clone the project div
   var $newProject = $('.project').clone();
 
   //find each element of clone, populate with the property to be placed there
   $newProject.find('h1').html(this.title);
 
+  return $newProject;
+
 };
 
-//push data to projects array
+console.log(rawProjects);
+rawProjects.forEach(function(el){
+  projects.push(new Project(el));
 
-//add
+});
 
+console.log(projects);
+
+//Next up: basic css styles for #projects
 //Next up: contain projects in a carousel or other slightly more interactive display
