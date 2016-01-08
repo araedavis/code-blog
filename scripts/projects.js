@@ -4,6 +4,7 @@ var rawProjects = [
   summary: 'Study aid for new derby players studying for WFTDA rules test.',
   img: 'imgs/derby_thumb.jpg',
   projectUrl: 'http://araedavis.com/derbyRulesApp/',
+  dateCreated: '',
 },
 
 { title: 'WeatherCat',
@@ -11,6 +12,7 @@ var rawProjects = [
   summary: 'Displays weather using browser\'s location and forecast.io. A different kitten background for every forecast! Includes toggle between Fahrenheit and Celcius units.',
   img: 'imgs/WeatherCat_thumb.jpg',
   projectUrl: 'http://codepen.io/davisdavis/full/qOREMo/',
+  dateCreated: '',
 },
 
 { title: 'Calculator',
@@ -18,6 +20,7 @@ var rawProjects = [
   summary: 'It does the maths',
   img: 'imgs/placeholder.jpg',
   projectUrl: 'http://codepen.io/davisdavis/full/PZGpaK/',
+  dateCreated: '',
 },
 
 { title: 'Work|Play',
@@ -25,6 +28,7 @@ var rawProjects = [
   summary: 'Pomodoro productivity timer app. Count down work blocks and breaks.',
   img: 'imgs/placeholder.jpg',
   projectUrl: 'http://codepen.io/davisdavis/full/JYpVEy/',
+  dateCreated: '',
 },
 
 { title: 'Writing Sample: Theater Curriculum Guide',
@@ -32,6 +36,7 @@ var rawProjects = [
   summary: 'Materials distributed to classroom teachers to supplement arts education field trips. Guide format and written content by Allison Davis. ',
   img: 'OCT_resourceGuide.png',
   projectUrl: 'http://octc.org/pdf/guides/timmyfailure_rg_before.pdf',
+  dateCreated: '',
 },
 
 { title: 'Email Campaign Sample: Newsletter',
@@ -39,6 +44,7 @@ var rawProjects = [
   summary: 'Newsletter for nonprofit outreach network for K-8th grade educators. Content, design, and layout by Allison Davis.',
   img: 'OCT_emailThumb.png',
   projectUrl: 'http://us8.campaign-archive2.com/?u=a4da6becf8e6624a9cb4d3ea0&id=bc80528f22&e=[UNIQID]',
+  dateCreated: '',
 }
 
 ];
