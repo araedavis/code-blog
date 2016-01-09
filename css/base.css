@@ -1,3 +1,20 @@
 img {
   max-width: 100%;
 }
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+a {
+  font-size: 1.5em;
+  text-decoration: none;
+}
