@@ -7,3 +7,8 @@
   padding-bottom: 3px;
   border-bottom: 1px solid gray;
 }
+
+/* === footer styles === */
+.social {
+  font-size: 2em;
+}

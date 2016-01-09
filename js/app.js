@@ -4,6 +4,11 @@ var projects = [];
 
 function Project(opts){
   this.title = opts.title;
+  this.subtitle = opts.subtitle;
+  this.summary = opts.summary;
+  this.img = opts.img;
+  this.projectUrl = opts.projectUrl;
+  this.dateCreated = opts.dateCreated;  
 }
 
 Project.prototype.toHtml = function(){
@@ -11,7 +16,10 @@ Project.prototype.toHtml = function(){
 
   //find each element of clone, populate with the property to be placed there
   $newProject.find('h1').html(this.title);
-  //add additional elements & properties here
+  $newProject.find('h3').html(this.subtitle);
+  $newProject.find('p').html(this.summary);
+  $newProject.find('a').attr('href', this.projectUrl);
+  $newProject.find('.project-img').attr('src', this.img);
 
   $newProject.removeClass('template');
 

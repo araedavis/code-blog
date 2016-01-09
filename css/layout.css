@@ -1,3 +1,8 @@
 .hamburger {
   float: right;
 }
+
+.social {
+  display:inline;
+  text-align:center;
+}

@@ -5,6 +5,7 @@ var rawProjects = [
   img: 'imgs/derby_thumb.jpg',
   projectUrl: 'http://araedavis.com/derbyRulesApp/',
   dateCreated: '',
+  //TODO add img alt atr
 },
 
 { title: 'WeatherCat',
@@ -34,7 +35,7 @@ var rawProjects = [
 { title: 'Writing Sample: Theater Curriculum Guide',
   subtitle: '',
   summary: 'Materials distributed to classroom teachers to supplement arts education field trips. Guide format and written content by Allison Davis. ',
-  img: 'OCT_resourceGuide.png',
+  img: 'imgs/OCT_resourceGuide.png',
   projectUrl: 'http://octc.org/pdf/guides/timmyfailure_rg_before.pdf',
   dateCreated: '',
 },
@@ -42,7 +43,7 @@ var rawProjects = [
 { title: 'Email Campaign Sample: Newsletter',
   subtitle: '',
   summary: 'Newsletter for nonprofit outreach network for K-8th grade educators. Content, design, and layout by Allison Davis.',
-  img: 'OCT_emailThumb.png',
+  img: 'imgs/OCT_emailThumb.png',
   projectUrl: 'http://us8.campaign-archive2.com/?u=a4da6becf8e6624a9cb4d3ea0&id=bc80528f22&e=[UNIQID]',
   dateCreated: '',
 }
