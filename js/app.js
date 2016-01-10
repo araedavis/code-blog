@@ -8,7 +8,7 @@ function Project(opts){
   this.summary = opts.summary;
   this.img = opts.img;
   this.projectUrl = opts.projectUrl;
-  this.dateCreated = opts.dateCreated;  
+  this.dateCreated = opts.dateCreated;
 }
 
 Project.prototype.toHtml = function(){
@@ -33,8 +33,6 @@ rawProjects.forEach(function(el){
   projects.push(new Project(el));
 
 });
-
-console.log(projects);
 
 projects.forEach(function(pro){
   $('#projects').append(pro.toHtml());

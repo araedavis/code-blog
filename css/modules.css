@@ -12,9 +12,9 @@ nav {
   border-bottom: 1px solid gray;
 }
 
-/* === footer styles === */
 .social {
   font-size: 2em;
+  padding-right: 10px;
 }
 
 .social li a {
