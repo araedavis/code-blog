@@ -16,7 +16,6 @@ $(function(){
 });
 
 
-
 //next up: create filters/categories for projects: ie, javascript, writing, marketing, etc.
 
 //next up: create dropdown menus for filtering projects
