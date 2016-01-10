@@ -1,6 +1,9 @@
-html, body {
-  margin: 5px;
-  padding: 5px;
+body {
+  background: linear-gradient(
+      rgba(255,255,255, 0.45),
+      rgba(255, 255, 255, 0.45)),
+  url("http://i.imgur.com/xa7jLQN.jpg");
+  color: #1E2749;
 }
 
 img {
@@ -19,7 +22,16 @@ h3 {
   font-size: 1.5em;
 }
 
+p {
+  font-size: 1.25em;
+}
+
 a {
   font-size: 2em;
+  color: #FFE023;
   text-decoration: none;
+}
+
+a:hover {
+  color: #6FC0E1;
 }

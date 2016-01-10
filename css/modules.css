@@ -1,4 +1,8 @@
 /* === nav styles === */
+nav {
+  padding: 10px;
+}
+
 .hamburger {
   font-size: 1.5em;
 }
@@ -11,4 +15,8 @@
 /* === footer styles === */
 .social {
   font-size: 2em;
+}
+
+.social li a {
+  color: #1E2749;
 }
