@@ -6,6 +6,7 @@ $(function(){
     e.preventDefault();
     $('.main-nav').show();
   });
-  //next up: rehide when menu icon is reclicked (using show/hide class?)
+  //TODO: rehide when menu icon is reclicked (using show/hide class?)
+
 
 });
