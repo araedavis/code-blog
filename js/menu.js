@@ -1,12 +1,18 @@
 $(function(){
-  //hide .main-nav
-  $('.main-nav').hide(); //this will change to an addClass()
+
+  $('.main-nav').hide();
 
   $('.hamburger').on('click', function(e){
     e.preventDefault();
-    $('.main-nav').show();
-  });
-  //TODO: rehide when menu icon is reclicked (using show/hide class?)
+    $('.main-nav').toggleClass('open');
 
+    if ($('.main-nav').hasClass('open')){
+      $('.main-nav').show();
+    } else {
+      $('.main-nav').hide();
+    }
+  });
+
+  
 
 });

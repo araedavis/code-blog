@@ -5,6 +5,7 @@ projectView.handleTabs = function(){
 
   $('.tab').on('click','a', function(){
     $('section').hide();
+    $('.main-nav').hide().removeClass('open');
     var tabId = $(this).data('tab');
     $('#' + tabId).show();
 
