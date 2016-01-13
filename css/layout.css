@@ -2,14 +2,31 @@ img {
   max-width: 100%;
 }
 
+nav {
+  padding: 10px;
+}
+
 .main-nav {
   text-align: center;
 }
 
+#about {
+  text-align: center;
+  padding: 50px;
+}
+
 #projects {
+  max-width: 100%;
+  padding: 25px;
   text-align: center;
 }
 
-.social {
-  display:inline;
+@media (min-width: 768px){
+  nav {
+    padding: 2px;
+  }
+
+  .main-nav {
+    text-align: right;
+  }
 }

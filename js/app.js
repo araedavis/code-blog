@@ -1,7 +1,6 @@
 var projects = [];
 
 //create a constructor function for project objects
-
 function Project(opts){
   this.title = opts.title;
   this.subtitle = opts.subtitle;
