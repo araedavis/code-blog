@@ -6,6 +6,17 @@ body {
   color: #1E2749;
 }
 
+h1 {
+  color: #2B9EFF;
+}
+
+h2,
+h3,
+h4,
+p {
+  color: #0C026D;
+}
+
 ul {
   list-style-type: none;
 }
@@ -15,19 +26,19 @@ h1 {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 p {
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 a {
   font-size: 2em;
-  color: #FFE023;
+  color: #2B9EFF;
   text-decoration: none;
 }
 
 a:hover {
-  color: #6FC0E1;
+  color: #FF4A43;
 }

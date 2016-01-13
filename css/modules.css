@@ -5,7 +5,7 @@
 
 .tab {
   padding-bottom: 5px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #2B9EFF;
 }
 
 .social {
@@ -26,7 +26,7 @@
   }
 
   .social {
-    font-size: 1em;
+    font-size: 1.75em;
   }
 
   .tab {
@@ -36,6 +36,6 @@
   }
 
   .tab a {
-    font-size: 1.5em;
+    font-size: 1.75em;
   }
 }
