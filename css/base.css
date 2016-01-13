@@ -6,15 +6,28 @@ body {
   color: #1E2749;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Bitter', serif;
+
+}
+
 h1 {
-  color: #2B9EFF;
+  color: #FF4A43;
 }
 
 h2,
 h3,
-h4,
+h4 {
+  color: #2B9EFF;
+}
+
 p {
-  color: #0C026D;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  color: #2B9EFF;
 }
 
 ul {
