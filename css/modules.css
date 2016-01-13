@@ -1,0 +1,22 @@
+/* === nav styles === */
+nav {
+  padding: 10px;
+}
+
+.hamburger {
+  font-size: 1.5em;
+}
+
+.main-nav li {
+  padding-bottom: 3px;
+  border-bottom: 1px solid gray;
+}
+
+.social {
+  font-size: 2em;
+  padding-right: 10px;
+}
+
+.social li a {
+  color: #1E2749;
+}
