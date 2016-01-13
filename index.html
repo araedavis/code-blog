@@ -7,10 +7,12 @@
 
     <script id="projectTemplate" type="text/x-handlebars-template">
 
-        <h1>{{title}}</h1>
-        <a href="{{projectUrl}}" target="blank"><img class="project-img" src="{{img}}" alt=""></a>
-        <h3>{{subtitle}}</h3>
-        <p>{{summary}}</p>
+        <div class="twelve columns project">
+          <h1>{{title}}</h1>
+          <a href="{{projectUrl}}" target="blank"><img class="project-img" src="{{img}}" alt=""></a>
+          <h3>{{subtitle}}</h3>
+          <p>{{summary}}</p>
+        </div>
 
     </script>
 
@@ -50,7 +52,9 @@
 
 
       <section id="projects">
-
+        <div class="container">
+          <div class="row"></div>
+        </div>
       </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

@@ -18,6 +18,12 @@
   color: #1E2749;
 }
 
+/*=== single project styles ===*/
+.project {
+  max-width: 100%;
+  padding: 15px;
+}
+
 
 /* === media queries === */
 @media (min-width: 768px){

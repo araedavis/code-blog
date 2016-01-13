@@ -33,5 +33,5 @@ rawProjects.forEach(function(el){
 });
 
 projects.forEach(function(pro){
-  $('#projects').append(pro.toHtml());
+  $('.row').append(pro.toHtml());
 });
