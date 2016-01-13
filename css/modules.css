@@ -7,8 +7,8 @@ nav {
   font-size: 1.5em;
 }
 
-.main-nav li {
-  padding-bottom: 3px;
+.tab {
+  padding-bottom: 5px;
   border-bottom: 1px solid gray;
 }
 
@@ -19,4 +19,32 @@ nav {
 
 .social li a {
   color: #1E2749;
+}
+
+@media (min-width: 768px){
+  nav {
+    padding: 2px;
+  }
+
+  .hamburger {
+    visibility: hidden;
+  }
+
+  .main-nav {
+    text-align: right;
+  }
+
+  .social {
+    font-size: 1em;
+  }
+
+  .tab {
+    border-bottom: 0px;
+    display: inline;
+    margin-right: 30px;
+  }
+
+  .tab a {
+    font-size: 1.5em;
+  }
 }

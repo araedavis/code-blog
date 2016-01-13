@@ -1,4 +1,10 @@
+img {
+  max-width: 100%;
+}
 
+.main-nav {
+  text-align: center;
+}
 
 #projects {
   text-align: center;
@@ -6,5 +12,4 @@
 
 .social {
   display:inline;
-  text-align:center;
 }

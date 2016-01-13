@@ -1,11 +1,10 @@
 var projectView = {};
 
 projectView.handleTabs = function(){
-  $('section').hide();
+  $('#about').hide();
 
   $('.tab').on('click','a', function(){
     $('section').hide();
-    $('.main-nav').hide().removeClass('open');
     var tabId = $(this).data('tab');
     $('#' + tabId).show();
 

@@ -12,23 +12,22 @@ function Project(opts){
 }
 
 Project.prototype.toHtml = function(){
-  var $newProject = $('.template').clone();
+  var source = $('#projectTemplate').html();
+  var template = Handlebars.compile(source);
 
-  //find each element of clone, populate with the property to be placed there
-  $newProject.find('h1').html(this.title);
-  $newProject.find('h3').html(this.subtitle);
-  $newProject.find('p').html(this.summary);
-  $newProject.find('a').attr('href', this.projectUrl);
-  $newProject.find('.project-img').attr('src', this.img);
+  var context = {
+    title: this.title,
+    subtitle: this.subtitle,
+    summary: this.summary,
+    img: this.img,
+    projectUrl: this.projectUrl
+  };
 
-  $newProject.removeClass('template');
-
-  return $newProject;
-
+  var html = template(context);
+  return html;
 };
 
 //pushes each rawProject object to projects arr as a new Project object
-
 rawProjects.forEach(function(el){
   projects.push(new Project(el));
 
@@ -37,6 +36,3 @@ rawProjects.forEach(function(el){
 projects.forEach(function(pro){
   $('#projects').append(pro.toHtml());
 });
-
-//Next up: basic css styles for #projects
-//Next up: contain projects in a carousel or other slightly more interactive display

@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <title>Allison Rae Davis</title>
     <meta name="viewport" content="width=device-width" scale="1">
-  </head>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/modules.css">
-  <link rel="stylesheet" href="css/themes.css">
+    <script id="projectTemplate" type="text/x-handlebars-template">
 
+        <h1>{{title}}</h1>
+        <a href="{{projectUrl}}" target="blank"><img class="project-img" src="{{img}}" alt=""></a>
+        <h3>{{subtitle}}</h3>
+        <p>{{summary}}</p>
+
+    </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/themes.css">
+
+</head>
   <body>
     <main>
 
@@ -22,14 +31,13 @@
         <ul class="main-nav">
 
           <!--TODO Home will become a tab to landing page -->
-          <li><a href="#">Home</a></li>
           <li class="tab"><a href="#" data-tab="about">About</a></li>
           <li class="tab"><a href="#" data-tab="projects">Projects</a></li>
-          <li class="social"><a href="#"><i class="fa fa-envelope-square"></i></a></li>
-          <li class="social"><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-          <li class="social"><a href="#"><i class="fa fa-github-square"></i></a></li>
+          <li class="social"><a href="mailto:a.rae.davis@gmail.com"><i class="fa fa-envelope-square"></i></a></li>
+          <li class="social"><a href="https://www.linkedin.com/in/araedavis"><i class="fa fa-linkedin-square"></i></a></li>
+          <li class="social"><a href="http://github.com/araedavis"><i class="fa fa-github-square"></i></a></li>
         </ul>
-        <!--TODO: add hrefs for social icons -->
+
       </nav>
 
       <!--TODO: add landing page! -->
@@ -40,16 +48,11 @@
 
 
       <section id="projects">
-        <h1>Projects</h1>
-        <div class="project template">
-          <h1></h1>
-          <a href="" target="blank"><img class="project-img" src="" alt=""></a>
-          <h3></h3> <!--subtitle-->
-          <p></p> <!--project summary-->
-        </div>
+
       </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/app.js"></script>
     <script src="js/menu.js"></script>

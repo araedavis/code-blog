@@ -1,7 +1,6 @@
 $(function(){
-
-  $('.main-nav').hide();
-
+  //if hamburger is visable
+    //hide main-nav
   $('.hamburger').on('click', function(e){
     e.preventDefault();
     $('.main-nav').toggleClass('open');
@@ -12,7 +11,5 @@ $(function(){
       $('.main-nav').hide();
     }
   });
-
-  
 
 });
