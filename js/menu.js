@@ -1,8 +1,8 @@
-function collapseNav(){
-  if ($('.main-nav').hasClass('collapsed')){
-    $('.main-nav').hide();
+function hideNav(){
+  if ($('.main-nav').hasClass('hidden')){
+    $('.main-nav').css('visibility', 'hidden');
   } else {
-    $('.main-nav').show();
+    $('.main-nav').css('visibility', 'visible');
   }
 };
 
@@ -10,6 +10,6 @@ collapseNav();
 
 $('.hamburger').on('click', function(e){
   e.preventDefault();
-  $('.main-nav').toggleClass('collapsed');
+  $('.main-nav').toggleClass('hidden');
   collapseNav();
 });

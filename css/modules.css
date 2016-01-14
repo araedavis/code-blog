@@ -18,6 +18,17 @@
   color: #1E2749;
 }
 
+/*=== filters ===*/
+#filters {
+  color: #2B9EFF;
+  font-size: 1.25em;
+}
+
+#filters i {
+  font-size: 1.5em;
+  padding: 5px;
+}
+
 /*=== single project styles ===*/
 .project {
   max-width: 100%;
