@@ -5,6 +5,7 @@ var rawProjects = [
   img: 'imgs/derby_thumb.jpg',
   projectUrl: 'http://araedavis.com/derbyRulesApp/',
   dateCreated: '',
+  category: 'web development'
   //TODO add img alt atr
 },
 
@@ -14,6 +15,7 @@ var rawProjects = [
   img: 'imgs/WeatherCat_thumb.jpg',
   projectUrl: 'http://codepen.io/davisdavis/full/qOREMo/',
   dateCreated: '',
+  category: 'web development'
 },
 
 { title: 'Calculator',
@@ -22,6 +24,8 @@ var rawProjects = [
   img: 'imgs/placeholder.jpg',
   projectUrl: 'http://codepen.io/davisdavis/full/PZGpaK/',
   dateCreated: '',
+  category: 'web development'
+
 },
 
 { title: 'Work|Play',
@@ -30,6 +34,7 @@ var rawProjects = [
   img: 'imgs/placeholder.jpg',
   projectUrl: 'http://codepen.io/davisdavis/full/JYpVEy/',
   dateCreated: '',
+  category: 'web development'
 },
 
 { title: 'Theater Curriculum Guide',
@@ -38,6 +43,7 @@ var rawProjects = [
   img: 'imgs/OCT_resourceGuide.png',
   projectUrl: 'http://octc.org/pdf/guides/timmyfailure_rg_before.pdf',
   dateCreated: '',
+  category: 'writing'
 },
 
 { title: 'Teacher Liaison Newsletter',
@@ -46,6 +52,7 @@ var rawProjects = [
   img: 'imgs/OCT_emailThumb.png',
   projectUrl: 'http://us8.campaign-archive2.com/?u=a4da6becf8e6624a9cb4d3ea0&id=bc80528f22&e=[UNIQID]',
   dateCreated: '',
+  category: 'writing'
 }
 
 ];

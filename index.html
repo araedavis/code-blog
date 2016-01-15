@@ -7,7 +7,7 @@
 
     <script id="projectTemplate" type="text/x-handlebars-template">
 
-        <div class="twelve columns project">
+        <div class="twelve columns project" data-category="{{category}}">
           <h1>{{title}}</h1>
           <a href="{{projectUrl}}" target="blank"><img class="project-img" src="{{img}}" alt=""></a>
           <h3>{{subtitle}}</h3>
@@ -59,8 +59,11 @@
           </select>
         </div>
 
+      
         <div class="container">
-          <div class="row"></div>
+          <div class="row">
+            <!--templates render here -->
+          </div>
         </div>
       </section>
 

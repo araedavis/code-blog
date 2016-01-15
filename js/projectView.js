@@ -1,5 +1,24 @@
 var projectView = {};
 
+//TODO: create filters/categories for projects: ie, javascript, writing, marketing, etc.
+projectView.populateCategoryFilter = function(){
+  var filterVal = [];
+  $('.project').each(function(){
+    var val = $(this).attr('data-category');
+    filterVal.push(val);
+
+    filterVal = $.unique(filterVal);
+    return filterVal;
+  });
+
+  $(filterVal).each(function(num, val){
+    var optionTag = '<option value="' + val + '">' + val + '</option>';
+    $('#category-filter').append(optionTag);
+  });
+
+};
+
+
 projectView.handleTabs = function(){
   $('#about').hide();
 
@@ -12,14 +31,13 @@ projectView.handleTabs = function(){
 };
 
 $(function(){
+  projectView.populateCategoryFilter();
   projectView.handleTabs();
+
 });
 
 
-//next up: create filters/categories for projects: ie, javascript, writing, marketing, etc.
 
-//next up: create dropdown menus for filtering projects
 
-//next up: finish responsive nav
 
 //next up: create media queries for grid layout

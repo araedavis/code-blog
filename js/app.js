@@ -8,6 +8,7 @@ function Project(opts){
   this.img = opts.img;
   this.projectUrl = opts.projectUrl;
   this.dateCreated = opts.dateCreated;
+  this.category = opts.category;
 }
 
 Project.prototype.toHtml = function(){
@@ -19,7 +20,8 @@ Project.prototype.toHtml = function(){
     subtitle: this.subtitle,
     summary: this.summary,
     img: this.img,
-    projectUrl: this.projectUrl
+    projectUrl: this.projectUrl,
+    category: this.category
   };
 
   var html = template(context);
