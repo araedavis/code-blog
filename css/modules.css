@@ -35,6 +35,10 @@
   padding: 15px;
 }
 
+.accordian {
+  font-size: 1.25em;
+}
+
 
 /* === media queries === */
 @media (min-width: 768px){

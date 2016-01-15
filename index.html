@@ -10,8 +10,11 @@
         <div class="twelve columns project" data-category="{{category}}">
           <h1>{{title}}</h1>
           <a href="{{projectUrl}}" target="blank"><img class="project-img" src="{{img}}" alt=""></a>
-          <h3>{{subtitle}}</h3>
-          <p>{{summary}}</p>
+          <h3>
+            <a href="#" class="accordian hide"><i class="fa fa-plus-circle"></i></a>
+            &nbsp&nbsp {{subtitle}}
+          </h3>
+          <p class="summary">{{summary}}</p>
         </div>
 
     </script>
@@ -59,7 +62,7 @@
           </select>
         </div>
 
-      
+
         <div class="container">
           <div class="row">
             <!--templates render here -->
