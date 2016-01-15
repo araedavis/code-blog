@@ -1,6 +1,6 @@
 var projectView = {};
 
-//TODO: create filters/categories for projects: ie, javascript, writing, marketing, etc.
+//DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
 projectView.populateCategoryFilter = function(){
   var filterVal = [];
   $('.project').each(function(){
@@ -15,9 +15,25 @@ projectView.populateCategoryFilter = function(){
     var optionTag = '<option value="' + val + '">' + val + '</option>';
     $('#category-filter').append(optionTag);
   });
-
 };
 
+
+projectView.handleCategoryFilter = function(){
+  $('#category-filter').on('change', function(){
+    var filtered = $(this).val();
+
+    $('.project').each(function(){
+      $(this).hide();
+
+      if($(this).data('category') === filtered){
+        $(this).show();
+      } else if (filtered === 'Filter by Category' || filtered === ''){
+        $(this).show();
+      };
+    });
+
+  });
+};
 
 projectView.handleTabs = function(){
   $('#about').hide();
@@ -32,12 +48,9 @@ projectView.handleTabs = function(){
 
 $(function(){
   projectView.populateCategoryFilter();
+  projectView.handleCategoryFilter();
   projectView.handleTabs();
-
 });
-
-
-
 
 
 //next up: create media queries for grid layout
