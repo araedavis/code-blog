@@ -51,6 +51,3 @@ $(function(){
   projectView.handleCategoryFilter();
   projectView.handleTabs();
 });
-
-
-//next up: create media queries for grid layout

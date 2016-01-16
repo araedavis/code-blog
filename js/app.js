@@ -1,4 +1,3 @@
-var projects = [];
 
 //create a constructor function for project objects
 function Project(opts){
@@ -10,6 +9,8 @@ function Project(opts){
   this.dateCreated = opts.dateCreated;
   this.category = opts.category;
 }
+
+Project.all = [];
 
 Project.prototype.toHtml = function(){
   var source = $('#projectTemplate').html();
@@ -28,12 +29,13 @@ Project.prototype.toHtml = function(){
   return html;
 };
 
+Project.loadAll = function(rawProjects){
 //pushes each rawProject object to projects arr as a new Project object
-rawProjects.forEach(function(el){
-  projects.push(new Project(el));
+  rawProjects.forEach(function(el){
+    Project.all.push(new Project(el));
+  });
 
-});
-
-projects.forEach(function(pro){
-  $('.row').append(pro.toHtml());
-});
+  Project.all.forEach(function(pro){
+    $('.row').append(pro.toHtml());
+  });
+};

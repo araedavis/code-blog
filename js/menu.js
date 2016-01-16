@@ -1,3 +1,5 @@
+//add any styles related to hidden/hide to state.css; also can project summary and nav use the same is-hidden class
+
 //nav menu function
 function hideNav(){
   if ($('.main-nav').hasClass('hidden')){
@@ -36,6 +38,7 @@ $('.accordian').on('click', function(e){
   } else {
     $('.accordian > i').addClass('fa-plus-circle').removeClass('fa-minus-circle');
   }
-
+      //e.target and using parent of the target to prevent opening of all
+      //sliding effect instead of just hide/show? 
   hideProjectSummary();
 });
