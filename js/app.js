@@ -39,3 +39,16 @@ Project.loadAll = function(rawProjects){
     $('.row').append(pro.toHtml());
   });
 };
+
+Project.fetchAll = function(){
+  if(localStorage.rawProjects){
+    
+    Project.loadAll(JSON.parse(localStorage.rawProjects));
+  } else {
+    $.get('data/projects.json', function(data){
+      Project.loadAll(data);
+      var dataString = JSON.stringify(data);
+      localStorage.setItem('rawProjects', dataString);
+    });
+  }
+};
