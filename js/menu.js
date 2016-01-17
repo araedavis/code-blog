@@ -16,29 +16,3 @@ $('.hamburger').on('click', function(e){
   $('.main-nav').toggleClass('hidden');
   collapseNav();
 });
-
-//Accordian function
-
-function hideProjectSummary(){
-  if($('.accordian').hasClass('hide') === true){
-    $('.summary').hide();
-  } else {
-    $('.summary').show();
-  }
-}
-
-hideProjectSummary();
-
-$('.accordian').on('click', function(e){
-  e.preventDefault();
-  $('.accordian').toggleClass('hide');
-
-  if($('.accordian').hasClass('hide') === false){
-    $('.accordian > i').addClass('fa-minus-circle').removeClass('fa-plus-circle');
-  } else {
-    $('.accordian > i').addClass('fa-plus-circle').removeClass('fa-minus-circle');
-  }
-      //e.target and using parent of the target to prevent opening of all
-      //sliding effect instead of just hide/show? 
-  hideProjectSummary();
-});

@@ -17,7 +17,6 @@ projectView.populateCategoryFilter = function(){
   });
 };
 
-
 projectView.handleCategoryFilter = function(){
   $('#category-filter').on('change', function(){
     var filtered = $(this).val();
@@ -46,8 +45,25 @@ projectView.handleTabs = function(){
   });
 };
 
+projectView.toggleSummary = function(){
+  $('.summary').hide();
+
+  $('.accordian').on('click', function(e){
+    e.preventDefault();
+    var target = $(e.target).parent().parent().next();  //target the project summary
+    $(e.target).toggleClass('fa-minus-circle fa-plus-circle');
+
+    if($('.accordian > i').hasClass('fa-minus-circle') === true){
+      $(target).show();
+    } else {
+      $(target).hide();
+    }
+  });
+};
+
 $(function(){
   projectView.populateCategoryFilter();
   projectView.handleCategoryFilter();
   projectView.handleTabs();
+  projectView.toggleSummary();
 });
