@@ -18,6 +18,18 @@
   color: #1E2749;
 }
 
+/*=== about ===*/
+.about-img{
+  border-radius: 10px;
+}
+
+.about-copy,
+.about-header {
+  text-align: left;
+}
+
+
+
 /*=== filters ===*/
 #filters {
   color: #2B9EFF;

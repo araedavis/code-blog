@@ -37,7 +37,7 @@ Project.loadAll = function(rawProjects){
 
 //renders each project using toHtml method
   Project.all.forEach(function(pro){
-    $('.container').append(pro.toHtml());
+    $('.project-container').append(pro.toHtml());
   });
 };
 

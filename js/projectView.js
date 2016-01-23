@@ -35,6 +35,7 @@ projectView.handleCategoryFilter = function(){
 };
 
 projectView.handleTabs = function(){
+  
   $('#about').hide();
 
   $('.tab').on('click','a', function(){
@@ -61,7 +62,13 @@ projectView.toggleSummary = function(){
   });
 };
 
+//wraps every 2 projects into a row div for skeleton grid layout
+projectView.skeletonGrid = function (){
+  $('.container:nth-child(2)').wrap('<div class="row"></div>');
+};
+
 $(function(){
+  projectView.skeletonGrid();
   projectView.populateCategoryFilter();
   projectView.handleCategoryFilter();
   projectView.handleTabs();
