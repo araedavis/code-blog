@@ -16,3 +16,12 @@ $('.hamburger').on('click', function(e){
   $('.main-nav').toggleClass('hidden');
   collapseNav();
 });
+
+//dynamic class removal for desktop layout
+var dynamicGrid = $(window).resize(function(){
+  var width = $(window).width();
+  if (width >= 768){
+    $('.project').removeClass('twelve').addClass('six');
+    $('.container:nth-child(2)').removeClass('row');
+  }
+});

@@ -35,9 +35,9 @@ Project.loadAll = function(rawProjects){
     Project.all.push(new Project(el));
   });
 
-//renders each project using toHtml method 
+//renders each project using toHtml method
   Project.all.forEach(function(pro){
-    $('.row').append(pro.toHtml());
+    $('.container').append(pro.toHtml());
   });
 };
 

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width" scale="1">
 
     <script id="projectTemplate" type="text/x-handlebars-template">
-        <div class="six columns project" data-category="{{category}}">
+      <div class="row">
+        <div class="twelve columns project" data-category="{{category}}">
           <h1>{{title}}</h1>
           <a href="{{projectUrl}}" target="blank"><img class="project-img" src="{{img}}" alt=""></a>
           <h3>
@@ -15,7 +16,7 @@
           </h3>
           <p class="summary">{{summary}}</p>
         </div>
-
+      </div>
     </script>
 
     <link href='https://fonts.googleapis.com/css?family=Raleway:200|Bitter' rel='stylesheet' type='text/css'>
@@ -63,9 +64,7 @@
 
 
         <div class="container">
-          <div class="row">
             <!--templates render here -->
-          </div>
         </div>
       </section>
 
