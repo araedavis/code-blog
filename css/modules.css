@@ -23,10 +23,11 @@
   border-radius: 10px;
 }
 
-.about-copy,
-.about-header {
+.about-copy {
   text-align: left;
 }
+
+.about-header {}
 
 
 
