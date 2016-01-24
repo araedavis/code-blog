@@ -35,11 +35,12 @@ projectView.handleCategoryFilter = function(){
 };
 
 projectView.handleTabs = function(){
-  
+  $('#projects').hide();
   $('#about').hide();
 
   $('.tab').on('click','a', function(){
     $('section').hide();
+    $('#landing').hide();
     var tabId = $(this).data('tab');
     $('#' + tabId).show();
 
