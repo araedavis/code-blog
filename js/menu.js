@@ -1,12 +1,18 @@
-$(function(){
-  //hide .main-nav
-  $('.main-nav').hide(); //this will change to an addClass()
+//add any styles related to hidden/hide to state.css; also can project summary and nav use the same is-hidden class
 
-  $('.hamburger').on('click', function(e){
-    e.preventDefault();
-    $('.main-nav').show();
-  });
-  //TODO: rehide when menu icon is reclicked (using show/hide class?)
+//nav menu function
+function hideNav(){
+  if ($('.main-nav').hasClass('hidden')){
+    $('.main-nav').css('visibility', 'hidden');
+  } else {
+    $('.main-nav').css('visibility', 'visible');
+  }
+};
 
+//hideNav();
 
+$('.hamburger').on('click', function(e){
+  e.preventDefault();
+  $('.main-nav').toggleClass('hidden');
+  collapseNav();
 });

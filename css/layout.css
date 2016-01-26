@@ -1,10 +1,36 @@
+img {
+  max-width: 100%;
+}
 
+nav {
+  padding: 10px;
+}
+
+.main-nav {
+  text-align: center;
+}
+
+#about {
+  text-align: center;
+  padding: 50px;
+}
 
 #projects {
   text-align: center;
 }
 
-.social {
-  display:inline;
-  text-align:center;
+#filters {
+  padding-bottom: 25px;
+}
+
+@media (min-width: 768px){
+  nav {
+    padding: 2px;
+  }
+
+  .main-nav {
+    text-align: right;
+  }
+
+  
 }

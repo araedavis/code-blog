@@ -1,22 +1,79 @@
-/* === nav styles === */
-nav {
-  padding: 10px;
-}
-
+/* === nav modules === */
 .hamburger {
   font-size: 1.5em;
 }
 
-.main-nav li {
-  padding-bottom: 3px;
-  border-bottom: 1px solid gray;
+.tab {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #2B9EFF;
 }
 
 .social {
   font-size: 2em;
   padding-right: 10px;
+  display: inline;
 }
 
 .social li a {
   color: #1E2749;
+}
+
+/*=== landing ===*/
+.landing-copy {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.landing-copy h4 {
+  font-family: 'Raleway', sans-serif;
+}
+.landing-img{
+  border-radius: 10px;
+}
+
+/*=== about ===*/
+.about-img{
+  border-radius: 10px;
+}
+
+.about-copy {
+  text-align: left;
+}
+
+/*=== filters ===*/
+#filters {
+  color: #2B9EFF;
+  font-size: 1.25em;
+}
+
+#filters i {
+  font-size: 1.5em;
+  padding: 5px;
+}
+
+/*=== single project styles ===*/
+.accordian {
+  font-size: 1.25em;
+}
+
+
+/* === media queries === */
+@media (min-width: 768px){
+  .hamburger {
+    visibility: hidden;
+  }
+
+  .social {
+    font-size: 1.75em;
+  }
+
+  .tab {
+    border-bottom: 0px;
+    display: inline;
+    margin-right: 30px;
+  }
+
+  .tab a {
+    font-size: 1.75em;
+  }
 }
