@@ -1,7 +1,42 @@
 var projectView = {};
 
+//DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
+projectView.populateCategoryFilter = function(){
+  var filterVal = [];
+  $('.project').each(function(){
+    var val = $(this).attr('data-category');
+    filterVal.push(val);
+
+    filterVal = $.unique(filterVal);
+    return filterVal;
+  });
+
+  $(filterVal).each(function(num, val){
+    var optionTag = '<option value="' + val + '">' + val + '</option>';
+    $('#category-filter').append(optionTag);
+  });
+};
+
+
+projectView.handleCategoryFilter = function(){
+  $('#category-filter').on('change', function(){
+    var filtered = $(this).val();
+
+    $('.project').each(function(){
+      $(this).hide();
+
+      if($(this).data('category') === filtered){
+        $(this).show();
+      } else if (filtered === 'Filter by Category' || filtered === ''){
+        $(this).show();
+      };
+    });
+
+  });
+};
+
 projectView.handleTabs = function(){
-  $('section').hide();
+  $('#about').hide();
 
   $('.tab').on('click','a', function(){
     $('section').hide();
@@ -12,15 +47,10 @@ projectView.handleTabs = function(){
 };
 
 $(function(){
+  projectView.populateCategoryFilter();
+  projectView.handleCategoryFilter();
   projectView.handleTabs();
 });
 
-
-
-//next up: create filters/categories for projects: ie, javascript, writing, marketing, etc.
-
-//next up: create dropdown menus for filtering projects
-
-//next up: finish responsive nav
 
 //next up: create media queries for grid layout
