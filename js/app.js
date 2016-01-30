@@ -42,7 +42,7 @@
     });
   };
 
-  Project.fetchAll = function(){
+  Project.fetchAll = function(callback){
     //if project data exists in local storage
     if(localStorage.rawProjects){
       Project.loadAll(JSON.parse(localStorage.rawProjects));
@@ -54,6 +54,7 @@
         localStorage.setItem('rawProjects', dataString);
       });
     }
+    callback;
   };
   module.Project = Project;
 })(window);

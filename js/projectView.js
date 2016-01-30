@@ -42,6 +42,8 @@
     $('.tab').on('click','a', function(){
       $('section').hide();
       $('#landing').hide();
+      projectView.toggleSummary();
+      projectView.populateCategoryFilter();
       var tabId = $(this).data('tab');
       $('#' + tabId).show();
 
@@ -69,13 +71,13 @@
     $('.container:nth-child(2)').wrap('<div class="row"></div>');
   };
 
-  $(function(){
+  projectView.initIndexPage = function(){
     projectView.skeletonGrid();
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
     projectView.handleTabs();
-    projectView.toggleSummary();
-  });
+    //projectView.toggleSummary();
+  };
 
   module.projectView = projectView;
 })(window);
