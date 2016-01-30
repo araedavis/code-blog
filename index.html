@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width" scale="1">
 
     <script id="projectTemplate" type="text/x-handlebars-template">
-        <div class="six columns project" data-category="{{category}}">
-          <h1>{{title}}</h1>
+      <div class="row project" data-category="{{category}}">
+        <div class="six columns" >
           <a href="{{projectUrl}}" target="blank"><img class="project-img" src="{{img}}" alt=""></a>
+        </div>
+        <div class="six columns">
+          <h1>{{title}}</h1>
           <h3>
-            <a href="#" class="accordian"><i class="fa fa-plus-circle"></i></a>
+            <a class="accordian" href="#" ><i class="fa fa-plus-circle"></i></a>
             &nbsp&nbsp {{subtitle}}
           </h3>
           <p class="summary">{{summary}}</p>
         </div>
-
+      </div>
     </script>
 
     <link href='https://fonts.googleapis.com/css?family=Raleway:200|Bitter' rel='stylesheet' type='text/css'>
@@ -97,7 +100,7 @@
 
 
         <div class="container">
-            <div class="row project-container"></div><!--templates render here -->
+            <div class="project-container"></div><!--templates render here -->
         </div>
       </section>
 
