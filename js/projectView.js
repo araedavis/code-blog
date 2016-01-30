@@ -70,13 +70,13 @@
     $('.container:nth-child(2)').wrap('<div class="row"></div>');
   };
 
-  $(function(){
+  projectView.initIndexPage = function(){
     projectView.skeletonGrid();
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
     projectView.handleTabs();
     projectView.toggleSummary();
-  });
+  };
 
   module.projectView = projectView;
 })(window);
