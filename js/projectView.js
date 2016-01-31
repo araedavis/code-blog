@@ -69,11 +69,12 @@
   };
 
   projectView.handleNav = function(){
-    
+
     $('.hamburger').on('click', function(e){
       e.preventDefault();
-      $('.main-nav').slideToggle();
-
+      $('.main-nav').slideToggle('600', function(){
+        $('.hamburger > i').toggleClass('fa-times fa-bars');
+      });
     });
   };
 
