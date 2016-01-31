@@ -68,27 +68,20 @@
     });
   };
 
-  // //this doesn't work yet
-  // projectView.handleNav = function(){
-  //   if ($('.main-nav').hasClass('hidden')){
-  //     $('.main-nav').css('visibility', 'hidden');
-  //   } else {
-  //     $('.main-nav').css('visibility', 'visible');
-  //   }
-  //
-  //   //hideNav();
-  //   $('.hamburger').on('click', function(e){
-  //     e.preventDefault();
-  //     $('.main-nav').toggleClass('hidden');
-  //     collapseNav();
-  //   });
-  // };
+  projectView.handleNav = function(){
+    
+    $('.hamburger').on('click', function(e){
+      e.preventDefault();
+      $('.main-nav').slideToggle();
+
+    });
+  };
 
   projectView.initIndexPage = function(){
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
     projectView.handleTabs();
-    //projectView.toggleSummary();
+    projectView.handleNav();
   };
 
   module.projectView = projectView;
