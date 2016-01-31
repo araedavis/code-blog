@@ -42,18 +42,44 @@
   };
 
   Project.fetchAll = function(callback){
+    function ajaxReq(){
+      $.ajax({
+        url: 'data/projects.json',
+        success: function(data, message, xhr){
+          console.log(data, message, xhr);
+
+          Project.loadAll(data);
+          var dataString = JSON.stringify(data);
+          localStorage.setItem('rawProjects', dataString);
+          localStorage.setItem('ETag', xhr.getResponseHeader('ETag'));
+
+        },
+      });
+    }
     //if project data exists in local storage
     if(localStorage.rawProjects){
+      //find the ETag
+      $.ajax({
+        type: 'HEAD',
+        url: 'data/projects.json',
+        ifModified: true,
+        success: function(data, message, xhr){
+          if(localStorage.ETag !== xhr.getResponseHeader('ETag')){
+            console.log(xhr.getResponseHeader('ETag'));
+            //if etag doesn't match mini req, new ajax req
+            ajaxReq();
+          };
+        }
+      });
+      //if etags are equal, load project data from local storage
+      console.log('local storage');
       Project.loadAll(JSON.parse(localStorage.rawProjects));
     } else {
       //else ajax!
-      $.get('data/projects.json', function(data){
-        Project.loadAll(data);
-        var dataString = JSON.stringify(data);
-        localStorage.setItem('rawProjects', dataString);
-      });
+      ajaxReq();
     }
     callback;
   };
+
   module.Project = Project;
 })(window);
