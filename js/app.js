@@ -1,4 +1,20 @@
+(function(module){
+  //create a constructor function for project objects
+  function Project(opts){
+    this.title = opts.title;
+    this.subtitle = opts.subtitle;
+    this.summary = opts.summary;
+    this.img = opts.img;
+    this.projectUrl = opts.projectUrl;
+    this.dateCreated = opts.dateCreated;
+    this.category = opts.category;
+  }
 
+  Project.all = [];
+
+  Project.prototype.toHtml = function(){
+
+<<<<<<< HEAD
 //create a constructor function for project objects
 (function(module) {
   function Project(opts){
@@ -16,6 +32,9 @@
   Project.prototype.toHtml = function(){
     var source = $('#projectTemplate').html();
     var template = Handlebars.compile(source);
+=======
+    var template = Handlebars.compile($('#projectTemplate').text());
+>>>>>>> class07
 
     var context = {
       title: this.title,
@@ -42,7 +61,11 @@
     });
   };
 
+<<<<<<< HEAD
   Project.fetchAll = function(callback){
+=======
+  Project.fetchAll = function(){
+>>>>>>> class07
     //if project data exists in local storage
     if(localStorage.rawProjects){
       Project.loadAll(JSON.parse(localStorage.rawProjects));
@@ -54,7 +77,12 @@
         localStorage.setItem('rawProjects', dataString);
       });
     }
+<<<<<<< HEAD
     callback;
   };
+=======
+  };
+
+>>>>>>> class07
   module.Project = Project;
 })(window);
