@@ -27,6 +27,13 @@ nav {
   padding-bottom: 25px;
 }
 
+footer {
+  left:0;
+  bottom:0;
+  height: 50px;
+  width: 100%;
+}
+
 @media (min-width: 768px){
   nav {
     padding: 2px;
@@ -39,6 +46,4 @@ nav {
   .project {
     text-align: left;
   }
-
-
 }
