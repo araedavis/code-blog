@@ -56,5 +56,11 @@
   font-size: 1.25em;
 }
 
+/* === footer styles === */
+footer p {
+  color:#ffffff;
+  text-align: center;
+}
+
 
 /* === media queries === */
