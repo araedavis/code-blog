@@ -66,10 +66,12 @@
   projectView.handleTabs = function(){
     $('#projects').hide();
     $('#about').hide();
+    $('footer').hide();
 
     $('.tab').on('click','a', function(){
       $('section').hide();
       $('#landing').hide();
+      $('footer').show();
       projectView.toggleSummary();
       projectView.populateCategoryFilter();
       var tabId = $(this).data('tab');
@@ -94,6 +96,7 @@
     });
   };
 
+<<<<<<< HEAD
 =======
 
     });
@@ -132,18 +135,30 @@
   //wraps every 2 projects into a row div for skeleton grid layout
   projectView.skeletonGrid = function (){
     $('.container:nth-child(2)').wrap('<div class="row"></div>');
+=======
+  projectView.handleNav = function(){
+    
+    $('.hamburger').on('click', function(e){
+      e.preventDefault();
+      $('.main-nav').slideToggle();
+
+    });
+>>>>>>> danielle
   };
 
   projectView.initIndexPage = function(){
-    projectView.skeletonGrid();
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
     projectView.handleTabs();
+<<<<<<< HEAD
 <<<<<<< HEAD
     //projectView.toggleSummary();
 =======
     projectView.toggleSummary();
 >>>>>>> class07
+=======
+    projectView.handleNav();
+>>>>>>> danielle
   };
 
   module.projectView = projectView;

@@ -51,12 +51,11 @@
 
   Project.loadAll = function(rawProjects){
   //pushes each rawProject object to Project.all
-    rawProjects.forEach(function(el){
-      Project.all.push(new Project(el));
-    });
-
-  //renders each project using toHtml method
-    Project.all.forEach(function(pro){
+    rawProjects.map(function(el){
+      return new Project(el);
+    })
+    //renders each project using toHtml method
+    .forEach(function(pro){
       $('.project-container').append(pro.toHtml());
     });
   };
