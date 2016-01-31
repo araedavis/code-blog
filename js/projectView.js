@@ -66,13 +66,23 @@
     });
   };
 
-  //wraps every 2 projects into a row div for skeleton grid layout
-  projectView.skeletonGrid = function (){
-    $('.container:nth-child(2)').wrap('<div class="row"></div>');
-  };
+  // //this doesn't work yet
+  // projectView.handleNav = function(){
+  //   if ($('.main-nav').hasClass('hidden')){
+  //     $('.main-nav').css('visibility', 'hidden');
+  //   } else {
+  //     $('.main-nav').css('visibility', 'visible');
+  //   }
+  //
+  //   //hideNav();
+  //   $('.hamburger').on('click', function(e){
+  //     e.preventDefault();
+  //     $('.main-nav').toggleClass('hidden');
+  //     collapseNav();
+  //   });
+  // };
 
   projectView.initIndexPage = function(){
-    projectView.skeletonGrid();
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
     projectView.handleTabs();
