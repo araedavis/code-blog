@@ -39,7 +39,7 @@
         <ul class="main-nav">
 
           <li class="tab"><a href="#" data-tab="about">About</a></li>
-          <li class="tab"><a href="#" data-tab="projects">Projects</a></li>
+          <li class="tab"><a href="/projects" data-tab="projects">Projects</a></li>
           <li class="social"><a href="mailto:a.rae.davis@gmail.com"><i class="fa fa-envelope-square"></i></a></li>
           <li class="social"><a href="https://www.linkedin.com/in/araedavis"><i class="fa fa-linkedin-square"></i></a></li>
           <li class="social"><a href="http://github.com/araedavis"><i class="fa fa-github-square"></i></a></li>
@@ -106,19 +106,20 @@
       <footer>
         <p>&#169;2016 by Allison Davis</p>
       </footer>
+    </main>
 
-    <!--download vendor js files instead of using CDN -->
     <script src="vendor/js/jquery-2.2.0.min.js"></script>
     <script src="vendor/js/handlebars-v4.0.5.js"></script>
     <script src="vendor/js/page.js"></script>
-    
+
     <script src="js/app.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/projectView.js"></script>
 
-    <script>
-      Project.fetchAll(projectView.initIndexPage());
-    </script>
+    <script src="js/landingController.js"></script>
+    <script src="js/projectController.js"></script>
+
+    <script src="js/routes.js"></script>
   </body>
 
 </html>

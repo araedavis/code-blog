@@ -35,22 +35,22 @@
     });
   };
 
-  projectView.handleTabs = function(){
-    $('#projects').hide();
-    $('#about').hide();
-    $('footer').hide();
-
-    $('.tab').on('click','a', function(){
-      $('section').hide();
-      $('#landing').hide();
-      $('footer').show();
-      projectView.toggleSummary();
-      projectView.populateCategoryFilter();
-      var tabId = $(this).data('tab');
-      $('#' + tabId).show();
-
-    });
-  };
+  // projectView.handleTabs = function(){
+  //   $('#projects').hide();
+  //   $('#about').hide();
+  //   $('footer').hide();
+  //
+  //   $('.tab').on('click','a', function(){
+  //     $('section').hide();
+  //     $('#landing').hide();
+  //     $('footer').show();
+  //     projectView.toggleSummary();
+  //     projectView.populateCategoryFilter();
+  //     var tabId = $(this).data('tab');
+  //     $('#' + tabId).show();
+  //
+  //   });
+  // };
 
   projectView.toggleSummary = function(){
     $('.summary').hide();
@@ -81,7 +81,7 @@
   projectView.initIndexPage = function(){
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
-    projectView.handleTabs();
+    projectView.toggleSummary();
     projectView.handleNav();
   };
 
