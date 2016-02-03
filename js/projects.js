@@ -53,7 +53,7 @@
           var dataString = JSON.stringify(data);
           localStorage.setItem('rawProjects', dataString);
           localStorage.setItem('ETag', xhr.getResponseHeader('ETag'));
-
+          callback();
         },
       });
     }
@@ -75,11 +75,11 @@
       //if etags are equal, load project data from local storage
       console.log('local storage');
       Project.loadAll(JSON.parse(localStorage.rawProjects));
+      callback();
     } else {
       //else ajax!
       ajaxReq();
     }
-    callback;
   };
 
   module.Project = Project;

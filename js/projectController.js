@@ -2,7 +2,7 @@
   var projectController = {};
 
   projectController.index = function(){
-    Project.fetchAll(projectView.initIndexPage());
+    Project.fetchAll(projectView.initIndexPage);
     $('main > section').hide();
     $('footer').show();
     $('#projects').show();

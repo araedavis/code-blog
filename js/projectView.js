@@ -56,8 +56,10 @@
     $('.summary').hide();
 
     $('.accordian').on('click', function(e){
+
       e.preventDefault();
-      var target = $(e.target).parent().parent().next();  //target the project summary
+      var target = $(e.target).parent().next();  //target the project summary
+
       $(e.target).toggleClass('fa-minus-circle fa-plus-circle');
 
       if($('.accordian > i').hasClass('fa-minus-circle') === true){
@@ -79,9 +81,9 @@
   };
 
   projectView.initIndexPage = function(){
+    projectView.toggleSummary();
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
-    projectView.toggleSummary();
     projectView.handleNav();
   };
 
