@@ -11,6 +11,7 @@
     this.category = opts.category;
   }
 
+  Project.all = [];
 
 //TODO move this method to view
   Project.prototype.toHtml = function(){
@@ -30,16 +31,10 @@
     return html;
   };
 
-//TODO:removing html population from this method because it's also view-ish
+//DONE:removing html population from this method because it's also view-ish
   Project.loadAll = function(rawProjects){
-    $('.project-container').html('');
-
-    rawProjects.map(function(el){
+    Project.all = rawProjects.map(function(el){
       return new Project(el);
-    })
-    //renders each project using toHtml method
-    .forEach(function(pro){
-      $('.project-container').append(pro.toHtml());
     });
   };
 

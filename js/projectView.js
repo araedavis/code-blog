@@ -1,6 +1,23 @@
 (function(module){
   var projectView = {};
 
+  // projectView.prototype.toHtml = function(){
+  //   var source = $('#projectTemplate').html();
+  //   var template = Handlebars.compile(source);
+  //
+  //   var context = {
+  //     title: this.title,
+  //     subtitle: this.subtitle,
+  //     summary: this.summary,
+  //     img: this.img,
+  //     projectUrl: this.projectUrl,
+  //     category: this.category
+  //   };
+  //
+  //   var html = template(context);
+  //   return html;
+  // };
+
   //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
   projectView.populateCategoryFilter = function(){
     var filterVal = [];
@@ -81,6 +98,11 @@
   };
 
   projectView.initIndexPage = function(){
+    $('.project-container').html('');
+    //renders each project using toHtml method
+    Project.all.forEach(function(pro){
+      $('.project-container').append(pro.toHtml());
+    });
     projectView.toggleSummary();
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
