@@ -31,7 +31,8 @@
   };
 
   Project.loadAll = function(rawProjects){
-  //pushes each rawProject object to Project.all
+    $('.project-container').html('');
+
     rawProjects.map(function(el){
       return new Project(el);
     })
