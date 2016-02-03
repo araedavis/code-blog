@@ -20,6 +20,7 @@
 
   //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
   projectView.populateCategoryFilter = function(){
+    $('#category-filter').html('<option>Filter by Category<option>');
     var filterVal = [];
     $('.project').each(function(){
       var val = $(this).attr('data-category');
@@ -37,8 +38,8 @@
 
   projectView.handleCategoryFilter = function(){
     $('#category-filter').on('change', function(){
-      var filtered = $(this).val();
 
+      var filtered = $(this).val();
       $('.project').each(function(){
         $(this).hide();
 
