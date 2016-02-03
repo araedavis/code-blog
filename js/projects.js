@@ -12,7 +12,7 @@
   }
 
 
-//view
+//TODO move this method to view
   Project.prototype.toHtml = function(){
     var source = $('#projectTemplate').html();
     var template = Handlebars.compile(source);
@@ -30,7 +30,7 @@
     return html;
   };
 
-//removing html population from model; moving into view
+//TODO:removing html population from this method because it's also view-ish
   Project.loadAll = function(rawProjects){
     $('.project-container').html('');
 
