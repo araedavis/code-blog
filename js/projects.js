@@ -11,7 +11,7 @@
     this.category = opts.category;
   }
 
-  Project.all = [];
+
 
   Project.prototype.toHtml = function(){
     var source = $('#projectTemplate').html();
