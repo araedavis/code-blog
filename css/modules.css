@@ -21,7 +21,7 @@
 /*=== landing ===*/
 .landing-copy {
   text-align: center;
-  padding-top: 5%;
+  padding-top: 8%;
 }
 
 .landing-copy h4 {
@@ -56,24 +56,11 @@
   font-size: 1.25em;
 }
 
+/* === footer styles === */
+footer p {
+  color:#ffffff;
+  text-align: center;
+}
+
 
 /* === media queries === */
-@media (min-width: 768px){
-  .hamburger {
-    visibility: hidden;
-  }
-
-  .social {
-    font-size: 1.75em;
-  }
-
-  .tab {
-    border-bottom: 0px;
-    display: inline;
-    margin-right: 30px;
-  }
-
-  .tab a {
-    font-size: 1.75em;
-  }
-}

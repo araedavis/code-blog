@@ -1,0 +1,29 @@
+/* === mobile nav === */
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 768px){
+  .hamburger {
+    display: none;
+  }
+
+  .main-nav {
+    display: block;
+  }
+
+  .social {
+    font-size: 1.75em;
+    display: inline-block;
+  }
+
+  .tab {
+    border-bottom: 0px;
+    display: inline-block;
+    margin-right: 30px;
+  }
+
+  .tab a {
+    font-size: 1.75em;
+  }
+}
