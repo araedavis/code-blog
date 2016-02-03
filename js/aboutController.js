@@ -4,6 +4,7 @@
   aboutController.index = function(){
     projectView.initIndexPage();
     $('main > section').hide();
+    $('footer').show();
     $('#about').show();
 
   };
