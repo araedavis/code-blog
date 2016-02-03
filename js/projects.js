@@ -12,7 +12,7 @@
   }
 
 
-
+//view
   Project.prototype.toHtml = function(){
     var source = $('#projectTemplate').html();
     var template = Handlebars.compile(source);
@@ -30,6 +30,7 @@
     return html;
   };
 
+//removing html population from model; moving into view
   Project.loadAll = function(rawProjects){
     $('.project-container').html('');
 
