@@ -1,8 +1,8 @@
-//routes for page.js
+//site routes
 
 page('/', landingController.index);
 page('/projects', projectController.index);
-//page('/about', someAboutFunction);
+page('/about', aboutController.index);
 
 
 page();
