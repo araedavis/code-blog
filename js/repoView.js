@@ -8,14 +8,16 @@
   };
 
   var render = function(repo){
-    return '<li>' + repo.name + '</li>';
+    return '<li><a href="' + repo.html_url + '">' + repo.name + '</a></li>';
   };
 
   repoView.index = function(){
     prepUi();
+    console.log(repo.updated);
     $('.repos ul').append(
       repo.all.map(render)
-    );    
+    );
+    $('.git-updated').html(repo.updated);
   };
 
   module.repoView = repoView;
