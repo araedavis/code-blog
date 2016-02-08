@@ -1,58 +1,83 @@
-var rawProjects = [
-{ title: 'Roller Derby Rules Test',
-  subtitle: 'Bootstrap/vanilla JavaScript',
-  summary: 'Study aid for new derby players studying for WFTDA rules test. Food truck mumblecore selfies pop-up fugiat. Retro pork belly odio, delectus lumbersexual culpa tofu quinoa iPhone deep v synth. Street art swag beard williamsburg consectetur drinking vinegar. Artisan stumptown deserunt aesthetic, post-ironic blog forage portland actually.',
-  img: 'imgs/derby_thumb.jpg',
-  projectUrl: 'http://araedavis.com/derbyRulesApp/',
-  dateCreated: '',
-  category: 'web development'
-  //TODO add img alt atr
-},
 
-{ title: 'WeatherCat',
-  subtitle: 'forcast.io API/AJAX/jQuery/HTML5 geolocation',
-  summary: 'Displays weather using browser\'s location and forecast.io. A different kitten background for every forecast! Includes toggle between Fahrenheit and Celcius units. Food truck mumblecore selfies pop-up fugiat. Retro pork belly odio, delectus lumbersexual culpa tofu quinoa iPhone deep v synth. Street art swag beard williamsburg consectetur drinking vinegar. Artisan stumptown deserunt aesthetic, post-ironic blog forage portland actually.',
-  img: 'imgs/WeatherCat_thumb.jpg',
-  projectUrl: 'http://codepen.io/davisdavis/full/qOREMo/',
-  dateCreated: '',
-  category: 'web development'
-},
+//create a constructor function for project objects
+(function(module) {
+  function Project(opts){
+    this.title = opts.title;
+    this.subtitle = opts.subtitle;
+    this.summary = opts.summary;
+    this.img = opts.img;
+    this.projectUrl = opts.projectUrl;
+    this.dateCreated = opts.dateCreated;
+    this.category = opts.category;
+  }
 
-{ title: 'Calculator',
-  subtitle: 'jQuery/vanilla JavaScript',
-  summary: 'It does the maths. Food truck mumblecore selfies pop-up fugiat. Retro pork belly odio, delectus lumbersexual culpa tofu quinoa iPhone deep v synth. Street art swag beard williamsburg consectetur drinking vinegar. Artisan stumptown deserunt aesthetic, post-ironic blog forage portland actually.',
-  img: 'imgs/placeholder.jpg',
-  projectUrl: 'http://codepen.io/davisdavis/full/PZGpaK/',
-  dateCreated: '',
-  category: 'web development'
+  Project.all = [];
 
-},
+//TODO move this method to view
+  Project.prototype.toHtml = function(){
+    var source = $('#projectTemplate').html();
+    var template = Handlebars.compile(source);
 
-{ title: 'Work|Play',
-  subtitle: 'jQuery/vanilla JavaScript',
-  summary: 'Pomodoro productivity timer app. Count down work blocks and breaks. Food truck mumblecore selfies pop-up fugiat. Retro pork belly odio, delectus lumbersexual culpa tofu quinoa iPhone deep v synth. Street art swag beard williamsburg consectetur drinking vinegar. Artisan stumptown deserunt aesthetic, post-ironic blog forage portland actually.',
-  img: 'imgs/placeholder.jpg',
-  projectUrl: 'http://codepen.io/davisdavis/full/JYpVEy/',
-  dateCreated: '',
-  category: 'web development'
-},
+    var context = {
+      title: this.title,
+      subtitle: this.subtitle,
+      summary: this.summary,
+      img: this.img,
+      projectUrl: this.projectUrl,
+      category: this.category
+    };
 
-{ title: 'Theater Curriculum Guide',
-  subtitle: 'Writing Sample',
-  summary: 'Materials distributed to classroom teachers to supplement arts education field trip to Oregon Children\'s Theatre\'s production of <em>Timmy Failure: Mistakes were Made</em>. Content aligns to Common Core State Standards in Language Arts for grades 3 - 8. Guide format and written content by Allison Davis.',
-  img: 'imgs/OCT_resourceGuide.png',
-  projectUrl: 'http://octc.org/pdf/guides/timmyfailure_rg_before.pdf',
-  dateCreated: '',
-  category: 'writing'
-},
+    var html = template(context);
+    return html;
+  };
 
-{ title: 'Teacher Liaison Newsletter',
-  subtitle: 'Email Campaign Sample',
-  summary: 'Newsletter for nonprofit outreach network for K-8th grade educators. Content, design, and layout by Allison Davis.',
-  img: 'imgs/OCT_emailThumb.png',
-  projectUrl: 'http://us8.campaign-archive2.com/?u=a4da6becf8e6624a9cb4d3ea0&id=bc80528f22&e=[UNIQID]',
-  dateCreated: '',
-  category: 'writing'
-}
+//DONE:removing html population from this method because it's also view-ish
+  Project.loadAll = function(rawProjects){
+    Project.all = rawProjects.map(function(el){
+      return new Project(el);
+    });
+  };
 
-];
+  Project.fetchAll = function(callback){
+    function ajaxReq(){
+      $.ajax({
+        url: 'data/projects.json',
+        success: function(data, message, xhr){
+          console.log(data, message, xhr);
+
+          Project.loadAll(data);
+          var dataString = JSON.stringify(data);
+          localStorage.setItem('rawProjects', dataString);
+          localStorage.setItem('ETag', xhr.getResponseHeader('ETag'));
+          callback();
+        },
+      });
+    }
+    //if project data exists in local storage
+    if(localStorage.rawProjects){
+      //find the ETag
+      $.ajax({
+        type: 'HEAD',
+        url: 'data/projects.json',
+        ifModified: true,
+        success: function(data, message, xhr){
+          if(localStorage.ETag !== xhr.getResponseHeader('ETag')){
+            console.log(xhr.getResponseHeader('ETag'));
+            //if etag doesn't match mini req, new ajax req
+            ajaxReq();
+          };
+        }
+      });
+      //if etags are equal, load project data from local storage
+      console.log('local storage');
+      Project.loadAll(JSON.parse(localStorage.rawProjects));
+      callback();
+    } else {
+      //else ajax!
+      ajaxReq();
+      callback();
+    }
+  };
+
+  module.Project = Project;
+})(window);
