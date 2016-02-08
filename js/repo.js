@@ -14,7 +14,6 @@
       headers: { 'Authorization': 'token ' + githubToken },
       success: function(data, status, xhr){
         repo.all = data;
-        console.log(repo.all);
         callback();
       }
     });
@@ -25,7 +24,7 @@
         type: 'GET',
         headers: { 'Authorization': 'token ' + githubToken },
         success: function(data, status, xhr){
-          repo.updated = data.updated_at;
+          repo.profileUpdated = data.updated_at;
           callback();
         }
       });

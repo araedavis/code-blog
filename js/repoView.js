@@ -11,13 +11,26 @@
     return '<li><a href="' + repo.html_url + '">' + repo.name + '</a></li>';
   };
 
+  //TODO: sort repos by last push date
+  repoView.sortRepos = function(){
+
+  };
+
+  //TODO: format date strings
+  repoView.dateFormat = function(){
+
+  };
+
   repoView.index = function(){
     prepUi();
-    console.log(repo.updated);
+    repoView.sortRepos();
+
+
     $('.repos ul').append(
       repo.all.map(render)
     );
-    $('.git-updated').html(repo.updated);
+    //TODO appends last updated date (should this be the last push date instead?)
+    $('.git-updated').append('<p>Last GitHub update: ' + repo.profileUpdated + '</p>');
   };
 
   module.repoView = repoView;
