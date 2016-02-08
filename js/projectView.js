@@ -21,6 +21,7 @@
 
   //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
   projectView.populateCategoryFilter = function(){
+    $('#category-filter').html('<option>Filter by Category<option>');
     var filterVal = [];
     $('.project').each(function(){
       var val = $(this).attr('data-category');
