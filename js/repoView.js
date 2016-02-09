@@ -29,7 +29,7 @@
     );
     //appends most recent code push date
     var lastUpdate = formatDate(repo.all[0]);
-    $('.git-updated').append('<h3>Last GitHub push<br> ' + lastUpdate.toDateString() + '</h3>');
+    $('.git-updated').html('<h3>Last GitHub push<br> ' + lastUpdate.toDateString() + '</h3>');
   };
 
   module.repoView = repoView;
