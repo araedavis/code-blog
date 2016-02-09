@@ -5,7 +5,6 @@
     projectView.initIndexPage();
     repo.fetch(repoView.index);
 
-    repo.fetchProfile();
     $('main > section').hide();
     $('footer').show();
     $('#about').show();
