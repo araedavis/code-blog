@@ -40,6 +40,10 @@
   text-align: left;
 }
 
+.repos ul li a {
+  font-size: 1.25em;
+}
+
 /*=== filters ===*/
 #filters {
   color: #2B9EFF;
