@@ -7,10 +7,9 @@
     $repos.find('ul').empty();
   };
 
-  // var formatDate = function(repo){
-  //   repo.updated_at = new Date(repo.updated_at);
-  //   return repo;
-  // };
+  var formatDate = function(repo){
+    return new Date(repo.updated_at);
+  };
 
 
   var render = function(repo){
@@ -27,8 +26,10 @@
       .reverse()
       .map(render)
     );
-    //TODO appends last updated date (should this be the last push date instead?)
-    //$('.git-updated').append('<p>Last GitHub update: ' + Something else goes here + '</p>');
+    //appends most recent code push date
+    var lastUpdate = formatDate(repo.all[0]);
+    console.log(lastUpdate.toDateString());
+    $('.git-updated').append('<p>Last GitHub push: ' + lastUpdate.toDateString() + '</p>');
   };
 
   module.repoView = repoView;
