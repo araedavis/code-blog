@@ -7,11 +7,12 @@
     $repos.find('ul').empty();
   };
 
+//returns a date object instead of a string
   var formatDate = function(repo){
     return new Date(repo.updated_at);
   };
 
-
+//renders html for repo ul
   var render = function(repo){
     return '<li><a href="' + repo.html_url + '">' + repo.name + '</a></li>';
   };
@@ -28,7 +29,6 @@
     );
     //appends most recent code push date
     var lastUpdate = formatDate(repo.all[0]);
-    console.log(lastUpdate.toDateString());
     $('.git-updated').append('<p>Last GitHub push: ' + lastUpdate.toDateString() + '</p>');
   };
 

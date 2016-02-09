@@ -18,20 +18,6 @@
         callback();
       }
     });
-
-    // repo.fetchProfile = function(){
-    //   $.ajax({
-    //     url: 'https://api.github.com/users/araedavis',
-    //     type: 'GET',
-    //     headers: { 'Authorization': 'token ' + githubToken },
-    //     success: function(data, status, xhr){
-    //       console.log(data);
-    //       repo.profileUpdated = data.updated_at;
-    //
-    //     }
-    //   });
-    // };
-
   };
 
   module.repo = repo;
