@@ -9,7 +9,7 @@
 
 //returns a date object instead of a string
   var formatDate = function(repo){
-    return new Date(repo.updated_at);
+    return new Date(repo.pushed_at);
   };
 
 //renders html for repo ul
@@ -22,7 +22,7 @@
 
     $('.repos ul').append(
       repo.all.sort(function(a,b){
-        return (new Date(a.updated_at) - new Date(b.updated_at));
+        return (new Date(a.pushed_at) - new Date(b.pushed_at));
       })
       .reverse()
       .map(render)
