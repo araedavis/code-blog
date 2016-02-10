@@ -1,0 +1,24 @@
+{
+  "name": "araedavis",
+  "version": "1.0.0",
+  "description": "portfolio site",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/araedavis/code-blog.git"
+  },
+  "author": "Allison Davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/araedavis/code-blog/issues"
+  },
+  "homepage": "https://github.com/araedavis/code-blog#readme"
+}
