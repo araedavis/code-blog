@@ -6,7 +6,7 @@
 
   repo.fetch = function(callback){
     $.ajax({
-      url: 'github.com/users/araedavis/repos',
+      url: 'github/users/araedavis/repos',
       type: 'GET',
       //error: function(xhr){
       //   console.log(xhr);
