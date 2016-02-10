@@ -3,7 +3,8 @@
 
   aboutController.index = function(){
     projectView.initIndexPage();
-    repo.fetch();
+    repo.fetch(repoView.index);
+
     $('main > section').hide();
     $('footer').show();
     $('#about').show();

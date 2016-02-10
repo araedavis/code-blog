@@ -2,20 +2,22 @@
   var repo = {};
 
   repo.all = [];
+  repo.updated = '';
 
   repo.fetch = function(callback){
     $.ajax({
       url: 'https://api.github.com/users/araedavis/repos',
       type: 'GET',
-      headers: { 'Authorization': + 'token ' + githubToken },
-      success: function(data){
+      //error: function(xhr){
+      //   console.log(xhr);
+      // },
+      headers: { 'Authorization': 'token ' + githubToken },
+      success: function(data, status, xhr){
+        console.log(data);
         repo.all = data;
-        console.log(repo.all);
         callback();
       }
     });
-
-
   };
 
   module.repo = repo;

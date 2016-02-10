@@ -75,7 +75,6 @@
     } else {
       //else ajax!
       ajaxReq();
-      callback();
     }
   };
 
