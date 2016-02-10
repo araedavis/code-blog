@@ -87,7 +87,7 @@
   };
 
   projectView.handleNav = function(){
-
+    $('.hamburger').off('click');
     $('.hamburger').on('click', function(e){
       e.preventDefault();
       $('.main-nav').slideToggle('600', function(){
