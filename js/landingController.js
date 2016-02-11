@@ -7,6 +7,7 @@
     $('footer').hide();
     $('#landing').show();
 
+    $('.tab-landing').hide();
   };
 
   module.landingController = landingController;

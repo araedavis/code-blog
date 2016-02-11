@@ -8,7 +8,7 @@
     $('main > section').hide();
     $('footer').show();
     $('#about').show();
-
+    $('.tab-landing').show();
   };
 
   module.aboutController = aboutController;

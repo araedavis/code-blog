@@ -6,6 +6,7 @@
     $('main > section').hide();
     $('footer').show();
     $('#projects').show();
+    $('.tab-landing').show();
   };
 
   module.projectController = projectController;

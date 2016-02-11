@@ -86,6 +86,12 @@
     });
   };
 
+  projectView.footerStats = function(projects){
+    return projects.map(function(project){
+      return project.dateCreated;
+    });
+  };
+
   projectView.handleNav = function(){
     $('.hamburger').off('click');
 
@@ -111,10 +117,12 @@
     Project.all.forEach(function(pro){
       $('.project-container').append(pro.toHtml());
     });
+
     projectView.toggleSummary();
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
     projectView.handleNav();
+
   };
 
   module.projectView = projectView;
