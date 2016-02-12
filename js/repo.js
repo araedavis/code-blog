@@ -2,7 +2,7 @@
   var repo = {};
 
   repo.all = [];
-  repo.updated = '';
+  //repo.updated = '';
 
   repo.fetch = function(callback){
     $.ajax({
