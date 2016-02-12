@@ -1,14 +1,21 @@
 (function(module){
   var aboutController = {};
 
-  aboutController.index = function(){
+  aboutController.index = function(ctx){
     projectView.initIndexPage();
-    repo.fetch(repoView.index);
+    repoView.index(ctx.repositories);
 
     $('main > section').hide();
     $('footer').show();
     $('#about').show();
     $('.tab-landing').show();
+  };
+
+  aboutController.getData = function(ctx, next){
+    var repoData = repo.fetch(function(repoData) {
+      ctx.repositories = repoData;
+      next();
+    });
   };
 
   module.aboutController = aboutController;

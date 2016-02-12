@@ -2,7 +2,7 @@
 
 page('/', landingController.index);
 page('/projects', projectController.index);
-page('/about', aboutController.index);
+page('/about', aboutController.getData, aboutController.index);
 
 
 page();

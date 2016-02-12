@@ -1,7 +1,7 @@
 (function(module){
   var repo = {};
 
-  repo.all = [];
+  //repo.all = [];
   //repo.updated = '';
 
   repo.fetch = function(callback){
@@ -12,9 +12,8 @@
       //   console.log(xhr);
       // },
       success: function(data, status, xhr){
-        console.log(data);
-        repo.all = data;
-        callback();
+        //repo.all = data;
+        callback(data);
       }
     });
   };
