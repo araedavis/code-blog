@@ -124,7 +124,6 @@
     projectView.toggleSummary();
     projectView.populateCategoryFilter();
     projectView.handleCategoryFilter();
-    projectView.handleNav();
 
   };
 

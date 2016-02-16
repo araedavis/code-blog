@@ -2,7 +2,7 @@
   var projectController = {};
 
   projectController.index = function(ctx){
-    projectView.initIndexPage();
+    projectView.initIndexPage(ctx.projects);
     menu.handleNav();
     $('main > section').hide();
     $('footer').show();
