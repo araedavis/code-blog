@@ -19,9 +19,17 @@
     return html;
   };
 
-  //TODO create filter that renders from handlebars template
+  //TODO remove duplicates from options
+  projectView.populateFilter = function(project){
+    var template = Handlebars.compile($('#optionTemplate').text());
+    var context = {
+      val: project.category
+    };
 
-  projectView.populateFilter = function(){
+    var options = template(context);
+    console.log($(options).val());
+
+    $('#category-filter').append(options);
 
   };
 
@@ -125,10 +133,11 @@
     //renders each project and appends to container
     projects.forEach(function(pro){
       $('.project-container').append(render(pro));
+      projectView.populateFilter(pro);
     });
 
     projectView.toggleSummary();
-    projectView.populateCategoryFilter();
+
     projectView.handleCategoryFilter();
 
   };
