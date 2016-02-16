@@ -17,6 +17,13 @@
     });
   };
 
+  projectController.loadByCategory = function(ctx, next){
+    var categoryData = function(articlesInCategory){
+      ctx.projects = articlesInCategory;
+      next();
+    };
+  };
+
   module.projectController = projectController;
 
 })(window);
