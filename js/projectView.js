@@ -19,24 +19,30 @@
     return html;
   };
 
-  //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
-  projectView.populateCategoryFilter = function(){
-    $('#category-filter').html('<option>Filter by Category</option>');
-    var filterVal = [];
-    $('.project').each(function(){
-      var val = $(this).attr('data-category');
-      filterVal.push(val);
+  //TODO create filter that renders from handlebars template
 
-      filterVal = $.unique(filterVal);
-      return filterVal;
-    });
+  projectView.populateFilter = function(){
 
-    $(filterVal).each(function(num, val){
-      var optionTag = '<option value="' + val + '">' + val + '</option>';
-      $('#category-filter').append(optionTag);
-
-    });
   };
+
+  //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
+  // projectView.populateCategoryFilter = function(){
+  //   //$('#category-filter').html('<option>Filter by Category</option>');
+  //   var filterVal = [];
+  //   $('.project').each(function(){
+  //     var val = $(this).attr('data-category');
+  //     filterVal.push(val);
+  //
+  //     filterVal = $.unique(filterVal);
+  //     return filterVal;
+  //   });
+  //
+  //   $(filterVal).each(function(num, val){
+  //     var optionTag = '<option value="' + val + '">' + val + '</option>';
+  //     $('#category-filter').append(optionTag);
+  //
+  //   });
+  // };
 
   projectView.handleCategoryFilter = function(){
     $('#category-filter').on('change', function(){
