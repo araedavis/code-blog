@@ -2,7 +2,7 @@
   var landingController = {};
 
   landingController.index = function(){
-    projectView.initIndexPage();
+    menu.handleNav();
     $('main > section').hide();
     $('footer').hide();
     $('#landing').show();

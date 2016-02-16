@@ -2,7 +2,8 @@
   var aboutController = {};
 
   aboutController.index = function(ctx){
-    projectView.initIndexPage();
+    //projectView.initIndexPage();
+    menu.handleNav();
     repoView.index(ctx.repositories);
 
     $('main > section').hide();
