@@ -19,9 +19,12 @@
 }
 
 /*=== landing ===*/
-.landing-copy {
-  text-align: center;
+#landing {
   padding-top: 8%;
+}
+.landing-copy {
+  padding-top: 8%;
+  text-align: center;
 }
 
 .landing-copy h4 {
