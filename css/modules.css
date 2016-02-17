@@ -59,6 +59,16 @@
 }
 
 /*=== single project styles ===*/
+
+.main-title {
+  color: #FF4A43;
+}
+
+.main-title a:hover {
+  color: #2B9EFF;
+}
+
+.main-title,
 .accordian {
   font-size: 1.25em;
 }
