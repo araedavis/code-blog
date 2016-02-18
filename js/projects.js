@@ -77,6 +77,12 @@
     }
   };
 
+  Project.findWhere = function(property, value, callback){
+    return Project.all.map(function(project){
+      return project.property;
+    });
+  };
+
   Project.getCategories = function(){
     return Project.all.map(function(project){
       return project.category;

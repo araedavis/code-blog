@@ -19,7 +19,7 @@
     return html;
   };
 
-  //TODO remove duplicates from options
+  //DONE remove duplicates from options
   projectView.populateFilter = function(project){
     var options,
       template = Handlebars.compile($('#optionTemplate').text());
@@ -31,6 +31,13 @@
     if($('#category-filter option').length < 2){
       $('#category-filter').append(options);
     }
+  };
+
+  projectView.handleCategoryFilter = function(){
+    $('#filters').on('change', 'select', function(){
+      resource = this.id.replace('-filter', '');
+      page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+'));
+    });
   };
 
   //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
@@ -52,21 +59,21 @@
   //   });
   // };
 
-  projectView.handleCategoryFilter = function(){
-    $('#category-filter').on('change', function(){
-      var filtered = $(this).val();
-
-      $('.project').each(function(){
-        $(this).hide();
-
-        if($(this).data('category') === filtered){
-          $(this).show();
-        } else if (filtered === 'Filter by Category' || filtered === ''){
-          $(this).show();
-        };
-      });
-    });
-  };
+  // projectView.handleCategoryFilter = function(){
+  //   $('#category-filter').on('change', function(){
+  //     var filtered = $(this).val();
+  //
+  //     $('.project').each(function(){
+  //       $(this).hide();
+  //
+  //       if($(this).data('category') === filtered){
+  //         $(this).show();
+  //       } else if (filtered === 'Filter by Category' || filtered === ''){
+  //         $(this).show();
+  //       };
+  //     });
+  //   });
+  // };
   // projectView.handleTabs = function(){
   //   $('#projects').hide();
   //   $('#about').hide();

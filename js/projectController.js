@@ -15,13 +15,15 @@
       ctx.projects = projectData;
       next();
     });
+
   };
 
   projectController.loadByCategory = function(ctx, next){
-    var categoryData = function(articlesInCategory){
-      ctx.projects = articlesInCategory;
+    var categoryData = function(projectsInCategory){
+      ctx.projects = projectsInCategory;
       next();
     };
+    Project.findWhere('category', ctx.params.category, categoryData);
   };
 
   module.projectController = projectController;
