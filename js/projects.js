@@ -77,5 +77,17 @@
     }
   };
 
+  Project.getCategories = function(){
+    return Project.all.map(function(project){
+      return project.category;
+    })
+      .reduce(function(catArr, cat){
+        if(catArr.indexOf(cat) === -1){
+          catArr.push(cat);
+        }
+        return catArr;
+      }, []);
+  };
+
   module.Project = Project;
 })(window);

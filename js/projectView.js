@@ -21,16 +21,16 @@
 
   //TODO remove duplicates from options
   projectView.populateFilter = function(project){
-    var template = Handlebars.compile($('#optionTemplate').text());
-    var context = {
-      val: project.category
-    };
+    var options,
+      template = Handlebars.compile($('#optionTemplate').text());
 
-    var options = template(context);
-    console.log($(options).val());
+    options = Project.getCategories().map(function(cat){
+      return template({val:cat});
+    });
 
-    $('#category-filter').append(options);
-
+    if($('#category-filter option').length < 2){
+      $('#category-filter').append(options);
+    }
   };
 
   //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
@@ -133,9 +133,8 @@
     //renders each project and appends to container
     projects.forEach(function(pro){
       $('.project-container').append(render(pro));
-      projectView.populateFilter(pro);
     });
-
+    projectView.populateFilter(projects);
     projectView.toggleSummary();
 
     projectView.handleCategoryFilter();
