@@ -84,7 +84,6 @@
       }
       return proArr;
     }, []);
-    console.log(projectsByCat);
     callback(projectsByCat);
   };
 

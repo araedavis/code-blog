@@ -22,7 +22,7 @@
       ctx.projects = projectsInCategory;
       next();
     };
-    Project.findWhere('category', ctx.params.categoryName, categoryData);
+    Project.findWhere('category', ctx.params.categoryName.replace('+', ' '), categoryData);
   };
 
   module.projectController = projectController;
