@@ -79,7 +79,9 @@
 
   Project.findWhere = function(property, value, callback){
     return Project.all.map(function(project){
-      return project.property;
+      if(project.property === value){
+        return project;
+      };
     });
   };
 

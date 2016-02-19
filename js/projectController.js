@@ -15,7 +15,6 @@
       ctx.projects = projectData;
       next();
     });
-
   };
 
   projectController.loadByCategory = function(ctx, next){
@@ -23,7 +22,7 @@
       ctx.projects = projectsInCategory;
       next();
     };
-    Project.findWhere('category', ctx.params.category, categoryData);
+    Project.findWhere('category', ctx.params.categoryName, categoryData);
   };
 
   module.projectController = projectController;
