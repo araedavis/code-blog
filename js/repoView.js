@@ -17,20 +17,23 @@
     return '<li><a href="' + repo.html_url + '">' + repo.name + '</a></li>';
   };
 
-//
+//sort repos by most recent date
+  var sortRepos = function(array){
+    return array.sort(function(a,b){
+      return (new Date(a.pushed_at) - new Date(b.pushed_at));
+    })
+    .reverse();
+  };
 
-  repoView.index = function(){
+  repoView.index = function(repositories){
     prepUi();
-
+    //appends sorted repos
     $('.repos ul').append(
-      repo.all.sort(function(a,b){
-        return (new Date(a.pushed_at) - new Date(b.pushed_at));
-      })
-      .reverse()
-      .map(render)
+      sortRepos(repositories).map(render)
     );
+
     //appends most recent code push date
-    var lastUpdate = formatDate(repo.all[0]);
+    var lastUpdate = formatDate(repositories[0]);
     $('.git-updated').html('<h3>Last GitHub push<br> ' + lastUpdate.toDateString() + '</h3>');
   };
 

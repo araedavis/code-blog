@@ -2,57 +2,78 @@
 
   var projectView = {};
 
-  // projectView.prototype.toHtml = function(){
-  //   var source = $('#projectTemplate').html();
-  //   var template = Handlebars.compile(source);
-  //
-  //   var context = {
-  //     title: this.title,
-  //     subtitle: this.subtitle,
-  //     summary: this.summary,
-  //     img: this.img,
-  //     projectUrl: this.projectUrl,
-  //     category: this.category
-  //   };
-  //
-  //   var html = template(context);
-  //   return html;
-  // };
+  var render = function(project){
+    var source = $('#projectTemplate').html();
+    var template = Handlebars.compile(source);
 
-  //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
-  projectView.populateCategoryFilter = function(){
-    $('#category-filter').html('<option>Filter by Category</option>');
-    var filterVal = [];
-    $('.project').each(function(){
-      var val = $(this).attr('data-category');
-      filterVal.push(val);
+    var context = {
+      title: project.title,
+      subtitle: project.subtitle,
+      summary: project.summary,
+      img: project.img,
+      projectUrl: project.projectUrl,
+      category: project.category
+    };
 
-      filterVal = $.unique(filterVal);
-      return filterVal;
+    var html = template(context);
+    return html;
+  };
+
+  //DONE remove duplicates from options
+  projectView.populateFilter = function(project){
+    var options,
+      template = Handlebars.compile($('#optionTemplate').text());
+
+    options = Project.getCategories().map(function(cat){
+      return template({val:cat});
     });
 
-    $(filterVal).each(function(num, val){
-      var optionTag = '<option value="' + val + '">' + val + '</option>';
-      $('#category-filter').append(optionTag);
-
-    });
+    if($('#category-filter option').length < 2){
+      $('#category-filter').append(options);
+    }
   };
 
   projectView.handleCategoryFilter = function(){
-    $('#category-filter').on('change', function(){
-      var filtered = $(this).val();
-
-      $('.project').each(function(){
-        $(this).hide();
-
-        if($(this).data('category') === filtered){
-          $(this).show();
-        } else if (filtered === 'Filter by Category' || filtered === ''){
-          $(this).show();
-        };
-      });
+    $('#filters').on('change', 'select', function(){
+      resource = this.id.replace('-filter', '');
+      page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+'));
     });
   };
+
+  //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
+  // projectView.populateCategoryFilter = function(){
+  //   //$('#category-filter').html('<option>Filter by Category</option>');
+  //   var filterVal = [];
+  //   $('.project').each(function(){
+  //     var val = $(this).attr('data-category');
+  //     filterVal.push(val);
+  //
+  //     filterVal = $.unique(filterVal);
+  //     return filterVal;
+  //   });
+  //
+  //   $(filterVal).each(function(num, val){
+  //     var optionTag = '<option value="' + val + '">' + val + '</option>';
+  //     $('#category-filter').append(optionTag);
+  //
+  //   });
+  // };
+
+  // projectView.handleCategoryFilter = function(){
+  //   $('#category-filter').on('change', function(){
+  //     var filtered = $(this).val();
+  //
+  //     $('.project').each(function(){
+  //       $(this).hide();
+  //
+  //       if($(this).data('category') === filtered){
+  //         $(this).show();
+  //       } else if (filtered === 'Filter by Category' || filtered === ''){
+  //         $(this).show();
+  //       };
+  //     });
+  //   });
+  // };
   // projectView.handleTabs = function(){
   //   $('#projects').hide();
   //   $('#about').hide();
@@ -93,36 +114,37 @@
     });
   };
 
-  projectView.handleNav = function(){
-    $('.hamburger').off('click');
+  // moved to menu.js
+  //projectView.handleNav = function(){
+  //   $('.hamburger').off('click');
+  //
+  //   $('.hamburger').on('click', function(e){
+  //     e.preventDefault();
+  //     $('.main-nav').slideToggle('600', function(){
+  //       $('.hamburger > i').toggleClass('fa-times fa-bars');
+  //     });
+  //   });
+  //
+  //   $(window).on('resize', function(){
+  //     if($(window).width() >= 768){
+  //       $('.main-nav').show();
+  //     } else if($(window).width() < 768){
+  //       $('.main-nav').hide();
+  //     };
+  //   });
+  // };
 
-    $('.hamburger').on('click', function(e){
-      e.preventDefault();
-      $('.main-nav').slideToggle('600', function(){
-        $('.hamburger > i').toggleClass('fa-times fa-bars');
-      });
-    });
-
-    $(window).on('resize', function(){
-      if($(window).width() >= 768){
-        $('.main-nav').show();
-      } else if($(window).width() < 768){
-        $('.main-nav').hide();
-      };
-    });
-  };
-
-  projectView.initIndexPage = function(){
+  projectView.initIndexPage = function(projects){
     $('.project-container').html('');
-    //renders each project using toHtml method
-    Project.all.forEach(function(pro){
-      $('.project-container').append(pro.toHtml());
-    });
 
+    //renders each project and appends to container
+    projects.forEach(function(pro){
+      $('.project-container').append(render(pro));
+    });
+    projectView.populateFilter(projects);
     projectView.toggleSummary();
-    projectView.populateCategoryFilter();
+
     projectView.handleCategoryFilter();
-    projectView.handleNav();
 
   };
 
