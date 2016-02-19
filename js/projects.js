@@ -78,18 +78,14 @@
   };
 
   Project.findWhere = function(property, value, callback){
-    var projectsByCat = Project.all.map(function(project){
-      return project;
-    })
-    .reduce(function(proArr, pro){
-      if(pro.property === value){
+    var projectsByCat = Project.all.reduce(function(proArr, pro){
+      if(pro.category === value){
         proArr.push(pro);
       }
       return proArr;
-    }, Project.all);
+    }, []);
     console.log(projectsByCat);
-
-    callback();
+    callback(projectsByCat);
   };
 
   Project.getCategories = function(){
