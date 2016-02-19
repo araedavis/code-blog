@@ -22,6 +22,10 @@
       </div>
     </script>
 
+    <script id="optionTemplate" type="text/x-handlebars-template">
+      <option value="{{val}}">{{val}}</option>
+    </script>
+
     <link href='https://fonts.googleapis.com/css?family=Raleway:200|Bitter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="vendor/css/normalize.css">
@@ -103,7 +107,7 @@
         <div id="filters">
           <i class="fa fa-tags"></i>
           <select id="category-filter">
-
+            <option value="/projects">-- Filter by Category --</option>
           </select>
         </div>
 
@@ -126,6 +130,7 @@
 
     <script src="js/projects.js"></script>
     <script src="js/projectView.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/repo.js"></script>
     <script src="js/repoView.js"></script>
 

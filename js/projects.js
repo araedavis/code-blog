@@ -14,22 +14,22 @@
   Project.all = [];
 
 //TODO move this method to view
-  Project.prototype.toHtml = function(){
-    var source = $('#projectTemplate').html();
-    var template = Handlebars.compile(source);
-
-    var context = {
-      title: this.title,
-      subtitle: this.subtitle,
-      summary: this.summary,
-      img: this.img,
-      projectUrl: this.projectUrl,
-      category: this.category
-    };
-
-    var html = template(context);
-    return html;
-  };
+  // Project.prototype.toHtml = function(){
+  //   var source = $('#projectTemplate').html();
+  //   var template = Handlebars.compile(source);
+  //
+  //   var context = {
+  //     title: this.title,
+  //     subtitle: this.subtitle,
+  //     summary: this.summary,
+  //     img: this.img,
+  //     projectUrl: this.projectUrl,
+  //     category: this.category
+  //   };
+  //
+  //   var html = template(context);
+  //   return html;
+  // };
 
 //DONE:removing html population from this method because it's also view-ish
   Project.loadAll = function(rawProjects){
@@ -43,13 +43,12 @@
       $.ajax({
         url: 'data/projects.json',
         success: function(data, message, xhr){
-          console.log(data, message, xhr);
-
           Project.loadAll(data);
+
           var dataString = JSON.stringify(data);
           localStorage.setItem('rawProjects', dataString);
           localStorage.setItem('ETag', xhr.getResponseHeader('ETag'));
-          callback();
+          callback(Project.all);
         },
       });
     }
@@ -71,11 +70,33 @@
       //if etags are equal, load project data from local storage
       console.log('local storage');
       Project.loadAll(JSON.parse(localStorage.rawProjects));
-      callback();
+      callback(Project.all);
     } else {
       //else ajax!
       ajaxReq();
     }
+  };
+
+  Project.findWhere = function(property, value, callback){
+    var projectsByCat = Project.all.reduce(function(proArr, pro){
+      if(pro.category === value){
+        proArr.push(pro);
+      }
+      return proArr;
+    }, []);
+    callback(projectsByCat);
+  };
+
+  Project.getCategories = function(){
+    return Project.all.map(function(project){
+      return project.category;
+    })
+      .reduce(function(catArr, cat){
+        if(catArr.indexOf(cat) === -1){
+          catArr.push(cat);
+        }
+        return catArr;
+      }, []);
   };
 
   module.Project = Project;
