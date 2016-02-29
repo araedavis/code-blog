@@ -8,6 +8,15 @@
   "category": "web development"
 },
 
+{ "title": "Screen",
+  "subtitle": "webSQL | vanilla JavaScript and jQuery | AJAX | OMDB API | Handlebars | Skeleton",
+  "summary": "Screen is written in client-side JavaScript and SQL, and is designed to serve as a companion schedule application to independent film festivals. Filter a festival schedule on multiple criteria, watch trailers, and create a custom schedule of interesting films. Integrates with the Open Movie Database API and Twitter to display ratings and tweet reviews quickly. Final group project for Code Fellows' Code 301 course.",
+  "img": "imgs/screen.png",
+  "projectUrl": "https://screen-portland.herokuapp.com/",
+  "dateCreated": "2016-2-13",
+  "category": "web development"
+},
+
 { "title": "WeatherCat",
   "subtitle": "forcast.io API | AJAX | HTML5 geolocation",
   "summary": "Displays weather using browser\"s location and forecast.io. A different kitten background for every forecast! Includes toggle between Fahrenheit and Celcius units. Food truck mumblecore selfies pop-up fugiat. Retro pork belly odio, delectus lumbersexual culpa tofu quinoa iPhone deep v synth. Street art swag beard williamsburg consectetur drinking vinegar. Artisan stumptown deserunt aesthetic, post-ironic blog forage portland actually.",

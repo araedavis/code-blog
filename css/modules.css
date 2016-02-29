@@ -60,6 +60,10 @@
   font-size: 1.25em;
 }
 
+.project-img {
+  border: solid 1px #D3D3D3;
+}
+
 /* === footer styles === */
 footer p {
   color:#ffffff;
