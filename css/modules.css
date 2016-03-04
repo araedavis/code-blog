@@ -30,15 +30,13 @@
 .landing-copy h4 {
   font-family: 'Raleway', sans-serif;
 }
-.landing-img{
-  border-radius: 10px;
-}
+
 
 /*=== about ===*/
-.about-img{
-  border-radius: 10px;
+.about-header,
+.about-img {
+  text-align: center;
 }
-
 .about-copy {
   text-align: left;
 }
@@ -47,9 +45,17 @@
   font-size: 1.25em;
 }
 
+.about-skills {
+  padding-bottom: 15px;
+  font-size: 1.15em;
+}
+.about-skills i {
+  font-size: 0.5em;
+}
+
 /*=== filters ===*/
 #filters {
-  color: #2B9EFF;
+  color: #017EE5;
   font-size: 1.25em;
 }
 
@@ -64,13 +70,26 @@
   color: #FF4A43;
 }
 
-.main-title a:hover {
-  color: #2B9EFF;
+.main-title:hover {
+  color: #017EE5;
 }
 
 .main-title,
 .accordian {
   font-size: 1.25em;
+}
+
+.project-img {
+  border: solid 1px #D3D3D3;
+}
+
+/* === repo styles === */
+.repos ul li a{
+  color: #F0C808;
+}
+
+.repos ul li a:hover {
+  color: #017EE5;
 }
 
 /* === footer styles === */

@@ -30,15 +30,17 @@
 
     if($('#category-filter option').length < 2){
       $('#category-filter').append(options);
+    } else if($('#category-filter option').attr('val', '/projects') === true){
+      $('#category-filter').append(Project.all);
     }
   };
 
-  projectView.handleCategoryFilter = function(){
-    $('#filters').on('change', 'select', function(){
-      resource = this.id.replace('-filter', '');
-      page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+'));
-    });
-  };
+  // projectView.handleCategoryFilter = function(){
+  //   $('#filters').on('change', 'select', function(){
+  //     var resource = this.id.replace('-filter', '');
+  //     page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+'));
+  //   });
+  // };
 
   //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
   // projectView.populateCategoryFilter = function(){
@@ -59,37 +61,22 @@
   //   });
   // };
 
-  // projectView.handleCategoryFilter = function(){
-  //   $('#category-filter').on('change', function(){
-  //     var filtered = $(this).val();
-  //
-  //     $('.project').each(function(){
-  //       $(this).hide();
-  //
-  //       if($(this).data('category') === filtered){
-  //         $(this).show();
-  //       } else if (filtered === 'Filter by Category' || filtered === ''){
-  //         $(this).show();
-  //       };
-  //     });
-  //   });
-  // };
-  // projectView.handleTabs = function(){
-  //   $('#projects').hide();
-  //   $('#about').hide();
-  //   $('footer').hide();
-  //
-  //   $('.tab').on('click','a', function(){
-  //     $('section').hide();
-  //     $('#landing').hide();
-  //     $('footer').show();
-  //     projectView.toggleSummary();
-  //     projectView.populateCategoryFilter();
-  //     var tabId = $(this).data('tab');
-  //     $('#' + tabId).show();
-  //
-  //   });
-  // };
+  projectView.handleCategoryFilter = function(){
+    $('#category-filter').on('change', function(){
+      var filtered = $(this).val();
+      console.log(filtered);
+      $('.project').each(function(){
+        $(this).hide();
+
+        if($(this).data('category') === filtered){
+          $(this).show();
+        } else if (filtered === '/projects' || filtered === ''){
+          console.log(filtered);
+          $(this).show();
+        };
+      });
+    });
+  };
 
   projectView.toggleSummary = function(){
     $('.summary').hide();
@@ -108,31 +95,6 @@
     });
   };
 
-  projectView.footerStats = function(projects){
-    return projects.map(function(project){
-      return project.dateCreated;
-    });
-  };
-
-  // moved to menu.js
-  //projectView.handleNav = function(){
-  //   $('.hamburger').off('click');
-  //
-  //   $('.hamburger').on('click', function(e){
-  //     e.preventDefault();
-  //     $('.main-nav').slideToggle('600', function(){
-  //       $('.hamburger > i').toggleClass('fa-times fa-bars');
-  //     });
-  //   });
-  //
-  //   $(window).on('resize', function(){
-  //     if($(window).width() >= 768){
-  //       $('.main-nav').show();
-  //     } else if($(window).width() < 768){
-  //       $('.main-nav').hide();
-  //     };
-  //   });
-  // };
 
   projectView.initIndexPage = function(projects){
     $('.project-container').html('');
