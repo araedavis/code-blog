@@ -39,6 +39,12 @@ footer p {
   padding-top: 0.5em;
 }
 
+@media (max-width: 768px){
+  .extra-img {
+    display: none;
+  }
+}
+
 @media (min-width: 768px){
   nav {
     padding: 2px;
