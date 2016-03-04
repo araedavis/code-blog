@@ -25,6 +25,8 @@
     Project.findWhere('category', ctx.params.categoryName.replace('+', ' '), categoryData);
   };
 
+
+
   module.projectController = projectController;
 
 })(window);

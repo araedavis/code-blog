@@ -30,12 +30,14 @@
 
     if($('#category-filter option').length < 2){
       $('#category-filter').append(options);
+    } else if($('#category-filter option').attr('val', '/projects') === true){
+      $('#category-filter').append(Project.all);
     }
   };
 
   projectView.handleCategoryFilter = function(){
     $('#filters').on('change', 'select', function(){
-      resource = this.id.replace('-filter', '');
+      var resource = this.id.replace('-filter', '');
       page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+'));
     });
   };
@@ -114,25 +116,6 @@
     });
   };
 
-  // moved to menu.js
-  //projectView.handleNav = function(){
-  //   $('.hamburger').off('click');
-  //
-  //   $('.hamburger').on('click', function(e){
-  //     e.preventDefault();
-  //     $('.main-nav').slideToggle('600', function(){
-  //       $('.hamburger > i').toggleClass('fa-times fa-bars');
-  //     });
-  //   });
-  //
-  //   $(window).on('resize', function(){
-  //     if($(window).width() >= 768){
-  //       $('.main-nav').show();
-  //     } else if($(window).width() < 768){
-  //       $('.main-nav').hide();
-  //     };
-  //   });
-  // };
 
   projectView.initIndexPage = function(projects){
     $('.project-container').html('');
