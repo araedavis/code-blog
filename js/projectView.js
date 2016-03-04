@@ -94,12 +94,6 @@
     });
   };
 
-  projectView.footerStats = function(projects){
-    return projects.map(function(project){
-      return project.dateCreated;
-    });
-  };
-
 
   projectView.initIndexPage = function(projects){
     $('.project-container').html('');
