@@ -64,13 +64,14 @@
   projectView.handleCategoryFilter = function(){
     $('#category-filter').on('change', function(){
       var filtered = $(this).val();
-
+      console.log(filtered);
       $('.project').each(function(){
         $(this).hide();
 
         if($(this).data('category') === filtered){
           $(this).show();
-        } else if (filtered === 'Filter by Category' || filtered === ''){
+        } else if (filtered === '/projects' || filtered === ''){
+          console.log(filtered);
           $(this).show();
         };
       });
