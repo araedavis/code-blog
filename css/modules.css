@@ -45,6 +45,14 @@
   font-size: 1.25em;
 }
 
+.about-skills {
+  padding-bottom: 15px;
+  font-size: 1.15em;
+}
+.about-skills i {
+  font-size: 0.5em;
+}
+
 /*=== filters ===*/
 #filters {
   color: #017EE5;
