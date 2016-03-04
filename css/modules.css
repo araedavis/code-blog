@@ -75,6 +75,15 @@
   border: solid 1px #D3D3D3;
 }
 
+/* === repo styles === */
+.repos ul li a{
+  color: #F0C808;
+}
+
+.repos ul li a:hover {
+  color: #017EE5;
+}
+
 /* === footer styles === */
 footer p {
   color:#ffffff;
