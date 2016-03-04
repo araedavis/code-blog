@@ -30,15 +30,13 @@
 .landing-copy h4 {
   font-family: 'Raleway', sans-serif;
 }
-.landing-img{
-  border-radius: 10px;
-}
+
 
 /*=== about ===*/
-.about-img{
-  border-radius: 10px;
+.about-header,
+.about-img {
+  text-align: center;
 }
-
 .about-copy {
   text-align: left;
 }

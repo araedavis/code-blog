@@ -51,4 +51,18 @@ footer p {
   .project {
     text-align: left;
   }
+
+  .about-row {
+    margin: 0 -3em 0 -3em;
+  }
+
+  .about-left {
+    margin-right: 1em;
+    padding-right: 2em;
+  }
+
+  .repos {
+    margin-left: 1em;
+    padding-left: 2em;
+  }
 }
