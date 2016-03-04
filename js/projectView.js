@@ -35,12 +35,12 @@
     }
   };
 
-  projectView.handleCategoryFilter = function(){
-    $('#filters').on('change', 'select', function(){
-      var resource = this.id.replace('-filter', '');
-      page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+'));
-    });
-  };
+  // projectView.handleCategoryFilter = function(){
+  //   $('#filters').on('change', 'select', function(){
+  //     var resource = this.id.replace('-filter', '');
+  //     page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+'));
+  //   });
+  // };
 
   //DONE: create filters/categories for projects: ie, javascript, writing, marketing, etc.
   // projectView.populateCategoryFilter = function(){
@@ -61,37 +61,21 @@
   //   });
   // };
 
-  // projectView.handleCategoryFilter = function(){
-  //   $('#category-filter').on('change', function(){
-  //     var filtered = $(this).val();
-  //
-  //     $('.project').each(function(){
-  //       $(this).hide();
-  //
-  //       if($(this).data('category') === filtered){
-  //         $(this).show();
-  //       } else if (filtered === 'Filter by Category' || filtered === ''){
-  //         $(this).show();
-  //       };
-  //     });
-  //   });
-  // };
-  // projectView.handleTabs = function(){
-  //   $('#projects').hide();
-  //   $('#about').hide();
-  //   $('footer').hide();
-  //
-  //   $('.tab').on('click','a', function(){
-  //     $('section').hide();
-  //     $('#landing').hide();
-  //     $('footer').show();
-  //     projectView.toggleSummary();
-  //     projectView.populateCategoryFilter();
-  //     var tabId = $(this).data('tab');
-  //     $('#' + tabId).show();
-  //
-  //   });
-  // };
+  projectView.handleCategoryFilter = function(){
+    $('#category-filter').on('change', function(){
+      var filtered = $(this).val();
+
+      $('.project').each(function(){
+        $(this).hide();
+
+        if($(this).data('category') === filtered){
+          $(this).show();
+        } else if (filtered === 'Filter by Category' || filtered === ''){
+          $(this).show();
+        };
+      });
+    });
+  };
 
   projectView.toggleSummary = function(){
     $('.summary').hide();
