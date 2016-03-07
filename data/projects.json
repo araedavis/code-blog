@@ -3,7 +3,7 @@
   "subtitle": "Bootstrap | vanilla JavaScript",
   "summary": "Practice quiz for new roller derby players studying for WFTDA rules test. Written in vanilla object-oriented JavaScript. Build on Bootstrap.",
   "img": "imgs/derby_thumb.jpg",
-  "projectUrl": "http://araedavis.com/derbyRulesApp/",
+  "projectUrl": "http://araedavis.github.io/RollerDerbyRulesTest/",
   "dateCreated": "2015-08-22",
   "category": "web development"
 },
