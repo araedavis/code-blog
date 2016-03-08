@@ -21,7 +21,7 @@
   "subtitle": "forcast.io API | AJAX | HTML5 geolocation",
   "summary": "Displays weather using browser\"s location and forecast.io's API. A different kitten background for every forecast! Includes toggle between Fahrenheit and Celcius units.",
   "img": "imgs/WeatherCat_thumb.jpg",
-  "projectUrl": "http://codepen.io/davisdavis/full/qOREMo/",
+  "projectUrl": "http://araedavis.github.io/WeatherCat/",
   "dateCreated": "2015-10-23",
   "category": "web development"
 },
@@ -30,7 +30,7 @@
   "subtitle": "vanilla JavaScript | jQuery",
   "summary": "Working calculator built in vanilla JavaScript and jQuery.",
   "img": "imgs/calc-img.png",
-  "projectUrl": "http://codepen.io/davisdavis/full/PZGpaK/",
+  "projectUrl": "http://araedavis.github.io/Pomodoro/",
   "dateCreated": "2015-12-24",
   "category": "web development"
 
