@@ -30,7 +30,7 @@
   "subtitle": "vanilla JavaScript | jQuery",
   "summary": "Working calculator built in vanilla JavaScript and jQuery.",
   "img": "imgs/calc-img.png",
-  "projectUrl": "http://araedavis.github.io/Pomodoro/",
+  "projectUrl": "http://codepen.io/davisdavis/full/PZGpaK/",
   "dateCreated": "2015-12-24",
   "category": "web development"
 
@@ -40,7 +40,7 @@
   "subtitle": "vanilla JavaScript | jQuery",
   "summary": "Pomodoro productivity timer app. Count down work blocks and breaks. Uses JavaScript's built-in interval methods.",
   "img": "imgs/workplay-img.png",
-  "projectUrl": "http://codepen.io/davisdavis/full/JYpVEy/",
+  "projectUrl": "http://araedavis.github.io/Pomodoro/",
   "dateCreated": "2015-12-22",
   "category": "web development"
 },
