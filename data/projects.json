@@ -1,19 +1,19 @@
 [
-{ "title": "Roller Derby Rules Test",
-  "subtitle": "Bootstrap | vanilla JavaScript",
-  "summary": "Practice quiz for new roller derby players studying for WFTDA rules test. Written in vanilla object-oriented JavaScript. Build on Bootstrap.",
-  "img": "imgs/derby_thumb.jpg",
-  "projectUrl": "http://araedavis.github.io/RollerDerbyRulesTest/",
-  "dateCreated": "2015-08-22",
-  "category": "web development"
-},
-
 { "title": "Screen",
   "subtitle": "webSQL | vanilla JavaScript and jQuery | AJAX | OMDB API | Handlebars | Skeleton",
   "summary": "Screen is written in client-side JavaScript and SQL, and is designed to serve as a companion schedule application to independent film festivals. Filter a festival schedule on multiple criteria, watch trailers, and create a custom schedule of interesting films. Integrates with the Open Movie Database API and Twitter to display ratings and tweet reviews quickly. Final group project for Code Fellows' Code 301 course.",
   "img": "imgs/screen.png",
   "projectUrl": "https://screen-portland.herokuapp.com/",
   "dateCreated": "2016-2-13",
+  "category": "web development"
+},
+
+{"title": "Roller Derby Rules Test",
+  "subtitle": "Bootstrap | vanilla JavaScript",
+  "summary": "Practice quiz for new roller derby players studying for WFTDA rules test. Written in vanilla object-oriented JavaScript. Build on Bootstrap.",
+  "img": "imgs/derby_thumb.jpg",
+  "projectUrl": "http://araedavis.github.io/RollerDerbyRulesTest/",
+  "dateCreated": "2015-08-22",
   "category": "web development"
 },
 
@@ -49,7 +49,7 @@
   "subtitle": "Writing Sample",
   "summary": "Materials distributed to classroom teachers to supplement arts education field trip to Oregon Children\"s Theatre\"s production of Timmy Failure: Mistakes were Made. Content aligns to Common Core State Standards in Language Arts for grades 3 - 8. Guide format and written content by Allison Davis.",
   "img": "imgs/OCT_resourceGuide.png",
-  "projectUrl": "http://octc.org/pdf/guides/timmyfailure_rg_before.pdf",
+  "projectUrl": "http://static1.squarespace.com/static/568dba38d8af10a744a7e112/t/57194c2ce3214007f06e2132/1461275698693/timmyfailure_rg.pdf",
   "dateCreated": "",
   "category": "writing"
 },
